@@ -3,10 +3,7 @@ layout: default
 isindex: true
 ---
 
-# Hola
+Apuntes:
 
-Aquí hay algunos apuntes para clase.
-
-- [HTML](html)
-- [CSS](css)
-
+# [Introducción a HTML](html)
+# [Introducción a CSS](css)
