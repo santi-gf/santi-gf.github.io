@@ -1,1 +1,49 @@
-theme: jekyll-theme-cayman
+# Built with Jekyll 3.2.0
+
+# Setup
+title:               Aplicaciones Web
+tagline:             'Algunos apuntes de clase'
+description:         'Algunos apuntes de clase'
+url:                 'https://santi-gf.github.io'
+baseurl:             ''
+
+# About/contact
+author:
+  name:              Santi
+  url:               https://santi-gf.github.io
+  # email:             santi@miservidor.es
+
+# Permalinks
+
+permalink: pretty
+permalink: /:title/
+
+# Set encoding to UTF-8
+encoding: utf-8
+
+# Collections for texts
+# collections:
+#   texts:
+#     output: true
+
+# Markdown specs
+markdown: kramdown
+
+kramdown:
+  auto_ids:       true
+  footnote_nr:    1
+  entity_output:  as_char
+  footnote_backlink: "&#x21a9;&#xfe0e;"
+  toc_levels:     1..6
+  smart_quotes:   lsquo,rsquo,ldquo,rdquo
+  enable_coderay: false
+
+# Exclusions from the final site
+exclude:
+  - optional
+  - vendor
+
+# Theme
+theme: "ed."
+
+

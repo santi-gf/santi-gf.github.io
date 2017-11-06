@@ -1,0 +1,27 @@
+---
+layout: default
+---
+
+<article>
+  <h1 class="no_toc text-title" id="{{ page.title | slugify }}">{{ page.title }}</h1>
+  {% if page.date %}<p class="date-title"><time datetime="{{ page.date | date: "%Y-%m-%d" }}">
+    {% assign m = page.date | date: "%-m" %}
+      {% case m %}
+        {% when '1' %}Enero
+        {% when '2' %}Febrero
+        {% when '3' %}Marzo
+        {% when '4' %}Abril
+        {% when '5' %}Mayo
+        {% when '6' %}Junio
+        {% when '7' %}Julio
+        {% when '8' %}Augosto
+        {% when '9' %}Septiembre
+        {% when '10' %}Octubre
+        {% when '11' %}Noviembre
+        {% when '12' %}Diciembre
+      {% endcase %}
+      {{ page.date | date: "%Y" }}
+    </time></p>
+    {% endif %}
+  {{ content }}
+</article>

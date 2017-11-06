@@ -1,0 +1,16 @@
+{::options parse_block_html="true" /}
+<div class="panel panel-default">
+{::options parse_block_html="false" /}
+{% if include.header %}<div class="panel-heading">{{ include.header }}</div>{% endif %}
+{% if include.body %}
+  <div class="panel-body">
+{{ include.body | strip }}
+  </div>
+{% endif %}
+{% if include.css %}
+{{ include.css | strip }}
+{% endif %}
+{% if include.html %}
+{{ include.html | strip }}
+{% endif %}
+</div>
