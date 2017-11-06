@@ -44,4 +44,4 @@ exclude:
   - vendor
 
 # Theme
-theme: "minimal"
+# theme: "minimal"
