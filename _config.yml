@@ -4,8 +4,8 @@
 title:               Aplicaciones Web
 tagline:             'Algunos apuntes de clase'
 description:         'Algunos apuntes de clase'
-url:                 'https://santi-gf.github.io/WebApps'
-baseurl:             ''
+url:                 'https://santi-gf.github.io'
+baseurl:             '/WebApps'
 
 # About/contact
 author:
