@@ -10,7 +10,7 @@ En serio, [que no me lo invento](https://www.youtube.com/watch?v=YjeQl0RRg0w).
 ---
 
 ## Ejercicio
-Séanse dos palabras tales como las siguientes:
+Séanse dos palabras tales como las siguientes...
 
 **Exiguo:**
 > "Insuficiente, escaso." ([rae dixit](http://dle.rae.es/?id=HFVPaIL))
@@ -19,7 +19,7 @@ Séanse dos palabras tales como las siguientes:
 > "Empleo en la oración de uno o más vocablos, innecesarios para que tenga sentido completo, pero con los cuales se añade expresividad a lo dicho [...]" ([rae dixit](http://dle.rae.es/?id=TPKD99c))
 
 ...constrúyase una oración que las contenga:
-> *Señor mío, su conato de verborrea pleonástica se me antoja mundana y exigua; viaja usted en el vagón de la pedantería.*
+> Señor mío, su conato de verborrea pleonástica se me antoja mundana y exigua; viaja usted en el vagón de la pedantería.
 
 ---
 
