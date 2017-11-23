@@ -21,8 +21,8 @@
 $main-font: "Palatino Linotype", "Book Antiqua", Palatino, serif;
 
 $heading-font: "Trebuchet MS", sans-serif;
-//$heading-color: #404040;
-$heading-color: #804040;
+$heading-color: #404040;
+//$heading-color: #804040;
 
 $text-color: #454545;
 $regular-font-size: 20px;
@@ -141,11 +141,11 @@ a:focus {
 
 /* Headings */
 
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3, h4, h5, h6, header {
   font-family: $heading-font;
   margin-bottom: .5rem;
   font-weight: 700;
-//  color: $heading-color;
+  color: $heading-color;
   letter-spacing: -.025rem;
   line-height: 1.25;
   text-rendering: optimizeLegibility;
@@ -159,6 +159,13 @@ h1.text-title {
   font-size: 2rem;
   font-style: italic;
   text-align: center;
+}
+
+header p {
+  font-size: 1.1rem;
+  font-style: italic;
+  text-align: center;
+  color: lighten($heading-color, 20%);
 }
 
 /* Date Title */

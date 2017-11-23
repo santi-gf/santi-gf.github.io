@@ -3,7 +3,7 @@ layout: default
 isindex: true
 ---
 
-El director de la RAE escribe en whatsapp sin el signo de abrir interrogación. ¿Qué mundo es este?
+El director de la RAE escribe en whatsapp sin el signo de abrir interrogación. Qué mundo es este?
 
 En serio, [que no me lo invento](https://www.youtube.com/watch?v=YjeQl0RRg0w).
 
@@ -23,7 +23,7 @@ Séanse dos palabras tales como las siguientes:
 
 ---
 
-**FYI:** Existe, y era muy necesario, de hecho, un artículo llamado ***Consecuencias de la vernácula erudira utilizada independientemente de la indespensabilidad: problemas de usar palabras largas sin necesidad***.
+**FYI:** Existe --y era muy necesario, de hecho-- un artículo llamado ***Consecuencias de la vernácula erudira utilizada independientemente de la indespensabilidad: problemas de usar palabras largas sin necesidad***.
 
 [Consequences of Erudite Vernacular Utilized Irrespective
 of Necessity: Problems with Using Long Words Needlessly (pdf)](http://web.princeton.edu/sites/opplab/papers/Opp%20Consequences%20of%20Erudite%20Vernacular.pdf)
