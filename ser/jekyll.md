@@ -3,11 +3,41 @@ layout: article
 title: Jekyll
 subtitle: Generador de sitios estáticos
 ---
+<style>
+  .hyde {
+    text-align: right;
+    color: ##454354;
+    background-color: #f8effc;
+    border-radius: 5px;
+    padding: 5px 20px;
+    margin: 0px;
+    font-size: 0.75rem;
+  }
+  
+  .hyde h1 {
+    font-size: 1rem;
+    color: #483952;
+    margin-top: 0px;
+  }
+  
+  .hyde p:last-child {
+    margin-bottom: 0px;
+  }
+  
+</style>
 
 
 Existiendo una [web oficial de Jekyll](https://jekyllrb.com/), ¿qué haces mirando esta página?.<br>
 -- Pues para comentarlo en clase.<br>
 -- Ah, pues ok.
+
+
+
+<div class="hyde">
+<h1>El extraño caso de Dr. Jekyll y Mr. Hyde</h1>
+<p>—R. Louis Stevenson (1986)</p>
+</div>
+
 
 ## Instalación
 
@@ -15,6 +45,12 @@ En Ubuntu:
 
     $ sudo apt-get install jekyll
 
+
+<div class="hyde">
+<p><i>
+  “Tengo una gran aversión a eso de hacer preguntas; se asemeja a la fatalidad del Juicio Final.”
+</i></p>
+</div>
 
 ## Configuración básica
 
@@ -33,6 +69,15 @@ baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 [...]
 ```
+
+
+
+<div class="hyde">
+<p><i>
+  “...he llegado a hacer de ello una norma de comportamiento; cuanto más sospechosa me parece una cosa, menos pregunto.”
+</i></p>
+</div>
+
 
 
 ## This is where the magic happens
@@ -55,6 +100,14 @@ Ahora, prueba esto:
 Es más, crea un nuevo fichero markdown dentro de una carpeta (en el directori principal, no en `_site`), pongamos `PulpFiction/burger.md`. Vuelve a generar el sitio, et voilà! Ya puedes verla en HTML.
 
 
+
+<div class="hyde">
+<p><i>
+  “Formular una pregunta equivale, muchas veces, a tirar una piedra. Suba usted a lo alto de una colina, tome una piedra y échela usted a rodar por la pendiente. La piedra arrastrará muchas otras y, sin que usted lo piense, el pobre diablo que cultiva lechugas en su huerta para pasar inofensivamente un día de asueto, sufrirá descalabros mortales y su viuda contraerá segundas nupcias.”
+</i></p>
+</div>
+
+
 ## ¿Pero qué ha ocurrido?
 
 Este es el asunto:
@@ -65,6 +118,12 @@ Este es el asunto:
 
 Suena sencillo, pero lo puede ser aún más con lo siguiente.
 
+
+<div class="hyde">
+<p><i>
+  “Y si soy el mayor de los pecadores, soy también la mayor de las víctimas.”
+</i></p>
+</div>
 
 ## Show me some action, please!
 
@@ -86,6 +145,18 @@ Esto de `jekyll serve` es lo que nos permite realizar el **desarrollo de la web*
 - Pruébalo en **nginx**
 - Y también en **Windows Server**
 
+
+
+<div class="hyde" style="text-align: left;">
+<p>
+<b>I. Peterson:</b> What are you going to do?<br>
+<b>Dr. H. Jekyll:</b> Something so simple. I'm going to put an end to all that confusion.<br>
+<b>Mr. E. Hyde:</b> You're looking for a man named Hyde.<br>
+<b>Dr. H. Jekyll:</b> Hyde? I'M DR. HENRY JEKYLL!!
+</p>
+</div>
+
+<p></p>
 
 > That's all, folks!
 
