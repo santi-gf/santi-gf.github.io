@@ -13,10 +13,10 @@ En serio, [que no me lo invento](https://www.youtube.com/watch?v=YjeQl0RRg0w).
 Séanse dos palabras tales como las siguientes...
 
 **Exiguo:**
-> "Insuficiente, escaso." ([rae dixit](http://dle.rae.es/?id=HFVPaIL))
+> "Insuficiente, escaso." ([RAE dixit](http://dle.rae.es/?id=HFVPaIL))
 
 **Pleonasmo:**
-> "Empleo en la oración de uno o más vocablos, innecesarios para que tenga sentido completo, pero con los cuales se añade expresividad a lo dicho [...]" ([rae dixit](http://dle.rae.es/?id=TPKD99c))
+> "Empleo en la oración de uno o más vocablos, innecesarios para que tenga sentido completo, pero con los cuales se añade expresividad a lo dicho [...]" ([RAE dixit](http://dle.rae.es/?id=TPKD99c))
 
 ...constrúyase una oración que las contenga:
 > Señor mío, su conato de verborrea pleonástica se me antoja mundana y exigua; viaja usted en el vagón de la pedantería.
