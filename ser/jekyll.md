@@ -58,16 +58,16 @@ date: 2017-11-25
 
 Jekyll es una aplicación de código abierto [desarrollada por GitHub](https://jekyllrb.com/), y permite generar un sitio web estático a partir de un código fuente escrito en Markdown.
 
-Hoy en día es importante la velocidad (venga, ¡cuéntame algo que no sepa!), y tener un sitio web estático es mucho más veloz que un sitio web dinámico (Wordpress etc.) Con Jekyll, **Google te va a amar**.
+Hoy en día es importante la velocidad (venga, ¡cuéntame algo que no sepa!), y tener un sitio web estático es mucho más --pero mucho más-- veloz que un sitio web dinámico (Wordpress etc.) Con Jekyll, **Google te va a amar**.
 
-Pero claro, Jekyll lo sabe usar el selecto club de los <s><i>frik...</i></s> desarrolladores <3
+Pero claro, Jekyll sólo lo sabe usar el selecto club de los <s><i>frik...</i></s> desarrolladores <3.
 
 ## Instalación
 
 “Tengo una gran aversión a eso de hacer preguntas; se asemeja a la fatalidad del Juicio Final.”
 {:.hyde}
 
-En Ubuntu:
+En Ubuntu, simplemente:
 
     $ sudo apt-get install jekyll
 
@@ -92,32 +92,38 @@ description: "Esto te va a destruir"
 ```
 
 
-## This is where the magic happens
+## Who is Mr. Hyde?
 
+{% comment %}
 “Plantear una pregunta es como lanzar una piedra. Se sienta uno tranquilamente en lo alto de una colina y allá va la piedra, poniendo en marcha a las demás.”
 {:.hyde}
+{% endcomment %}
 
-Just do this:
+“...y bien entrada una infausta noche, combiné los elementos, observé cómo hervían y humeaban en la vasija, y cuando cesó la ebullición, en un inusitado arranque de valor, me bebí la pócima de un trago.”
+{:.hyde}
+
+Si quieres conocer a Mr. Hyde:
 
     $ jekyll build
 
-Esto crea el directorio `_site`.<br>
--- Suena a que es donde se genera el sitio, ¿verdad?<br>
--- Es que es donde se genera el sitio. Verdad.
+> Jekyll se ha tomado su poción y se ha transformado en Mr. Hyde.
 
-Venga, venga. Abre el fichero `_site/index.html` con un navegador.<br>¿Ves? No muerde.
+Se ha creado el directorio `_site`.<br>
+-- Suena a que es donde se genera el sitio, ¿verdad?<br>
+-- Es que es donde se genera el sitio.
+
+Venga, venga. Abre el fichero `_site/index.html` con un navegador.<br>¿Ves? No muerde *(aunque no te culpo: el verdadero Mr. Hyde sí)*.
 
 Ahora, prueba esto:
 - Crea un nuevo fichero nuevo en el directorio principal del sitio, con extensión `.md`. (Venga, escribe algo interesante y luego vuelves, anda.)
 - No, en serio, escribe algo menos aburrido que *Holaaaaa zzz...*
 - Ejecuta de nuevo `jekyll build` y comprueba que se ha creado en `_site`.
 
-Es más, crea un nuevo fichero markdown dentro de una carpeta (en el directori principal, no en `_site`), pongamos `DrJekyll/MrHyde.md`. Vuelve a generar el sitio, et voilà! Ya puedes verla en HTML.
+Es más, crea un nuevo fichero markdown dentro de una carpeta (en el directori principal, no en `_site`), pongamos `DrJekyll/MrHyde.md`. Vuelve a generar el sitio, *et voilà!* Ya puedes verla en HTML.
 
 
 
 ## ¿Pero qué ha ocurrido?
-
 
 “Una cosa es mortificar la curiosidad, y otra vencerla.”
 {:.hyde}
@@ -207,7 +213,7 @@ Tras realizar cualquier cambio a tus ficheros en Markdown, sólo necesitas reali
 “No es que pensara en resucitar a Hyde; la simple idea de hacer eso me asustaba hasta el paroxismo: no, era mi propia persona la que una vez más estaba tentada de jugar con mi conciencia; y a escondidas, como un vulgar pecador, fue como acabé cediendo a los asaltos de la tentación.”
 {:.hyde}
 
-Y con esto podemos dar concluido este viaje por el mundo del Dr. Jekyll y el misterioso Mr. Hyde, donde la dualidad de la naturaleza humana se nos muestra en su más crudo semblante.
+Aquí damos por concluido este viaje por el mundo del Dr. Jekyll y Mr. Hyde, donde la dualidad de la naturaleza humana se nos muestra en un crudo semblante.
 
 ---
 
