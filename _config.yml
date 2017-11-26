@@ -1,29 +1,22 @@
 # Built with Jekyll 3.2.0
 
-# Setup
 title:               Sempiterna Serendipia
 tagline:             ''
 description:         'Procrastinación Perceptiva'
 url:                 https://santi-gf.github.io
 baseurl:             ''
 
-# About/contact
 author:
   name:              Santi
   url:               https://santi-gf.github.io
   # email:             santi@miservidor.es
 
-# Permalinks
-
 permalink: pretty
 permalink: /:title/
 
-# Set encoding to UTF-8
 encoding: utf-8
 
-# Markdown specs
 markdown: kramdown
-
 kramdown:
   auto_ids:       true
   footnote_nr:    1
@@ -33,3 +26,5 @@ kramdown:
   smart_quotes:   lsquo,rsquo,ldquo,rdquo
   enable_coderay: false
 
+sass:
+  style: compressed # Minify css
