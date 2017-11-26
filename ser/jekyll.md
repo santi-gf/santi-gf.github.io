@@ -8,10 +8,13 @@ date: 2017-11-25
 <style>
   .hyde {
     text-align: right;
-    color: #454354;
     border-right: 2px solid #C5B5D1;
     border-radius: 2px;
-    padding: 5px 10px 5px 8rem;
+    display: block;
+    margin-left: auto;
+    margin-right: 0px;
+    padding: 5px 10px;
+    max-width: 390px;
     font-size: 0.8rem;
     text-shadow: 0px 1px 0px #FEF8FF;
     color: #A8A2AB;
@@ -27,7 +30,7 @@ date: 2017-11-25
     max-width: 300px;
   }
   #ornamento {
-    max-width: 100px;
+    max-width: 8rem;
   }
 </style>
 
@@ -38,7 +41,7 @@ date: 2017-11-25
 </div>
 
 {% comment %}
-<!-- Si la imagen tiene el tamaño final (~300px), se ve borrosa en iOS. Por eso uso una más grande. -->
+  Si la imagen tiene el tamaño final (~300px), se ve borrosa en iOS. Por eso uso una más grande.
 {% endcomment %}
 ![Dr. Jekyll y Mr. Hyde](/assets/jekyll/jekyll.png){:.centerblock #hydeimg}
 
@@ -49,7 +52,9 @@ date: 2017-11-25
 <b>Dr. H. Jekyll:</b> Something so simple. I'm going to put an end to all that confusion.<br>
 <b>Mr. E. Hyde:</b> You're looking for a man named Hyde.<br>
 <b>Dr. H. Jekyll:</b> Hyde? I'M DR. HENRY JEKYLL!!
-{:.hyde style="text-align: left; padding-left: 5rem;"}
+{:.hyde style="text-align: left;"}
+
+<!-- {:.hyde style="text-align: left; padding-left: 5rem;"} -->
 
 Jekyll es una aplicación de código abierto [desarrollada por GitHub](https://jekyllrb.com/), y permite generar un sitio web estático a partir de un código fuente escrito en Markdown.
 
@@ -163,7 +168,7 @@ En tu cuenta de GitHub, [configura un repositorio como página de GitHub](https:
 - Puedes poner ficheros `.html` y `.css` para que se muestren.
 - Puedes usarlo como web de Jekyll.
 
-Adivina cuál de los dos puntos anteriores vamos a hacer *(guiño-quiño-codazo-codazo)*.
+Adivina cuál de los dos puntos anteriores vamos a hacer *(guiño-guiño-codazo-codazo)*.
 
 1. Antes de nada, instala `git` en tu máquina:
 ```bash
