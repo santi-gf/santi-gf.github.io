@@ -26,26 +26,36 @@ date: 2017-11-25
   #hydeimg {
     max-width: 300px;
   }
-  
+  #ornamento {
+    max-width: 100px;
+  }
 </style>
 
 
 <div class="hyde">
 <h1>El extraño caso de Dr. Jekyll y Mr. Hyde</h1>
-<p>—R. Louis Stevenson (1986)</p>
+<p>—R. Louis Stevenson (1886)</p>
 </div>
 
+{% comment %}
 <!-- Si la imagen tiene el tamaño final (~300px), se ve borrosa en iOS. Por eso uso una más grande. -->
-![Dr. Jekyll y Mr. Hyde](/assets/jekyll.png){:.centerblock #hydeimg}
+{% endcomment %}
+![Dr. Jekyll y Mr. Hyde](/assets/jekyll/jekyll.png){:.centerblock #hydeimg}
 
 
-## Sobre Jekyll
+## Te presento a Jekyll
 
-Jekyll es una aplicación de terminal que permite generar un sitio web estático a partir de un código fuente escrito en Markdown.
+<b>I. Peterson:</b> What are you going to do?<br>
+<b>Dr. H. Jekyll:</b> Something so simple. I'm going to put an end to all that confusion.<br>
+<b>Mr. E. Hyde:</b> You're looking for a man named Hyde.<br>
+<b>Dr. H. Jekyll:</b> Hyde? I'M DR. HENRY JEKYLL!!
+{:.hyde style="text-align: left; padding-left: 5rem;"}
 
-Echa un vistazo a la [web oficial de Jekyll](https://jekyllrb.com/).
+Jekyll es una aplicación de código abierto [desarrollada por GitHub](https://jekyllrb.com/), y permite generar un sitio web estático a partir de un código fuente escrito en Markdown.
 
+Hoy en día es importante la velocidad (venga, ¡cuéntame algo que no sepa!), y tener un sitio web estático es mucho más veloz que un sitio web dinámico (Wordpress etc.) Con Jekyll, **Google te va a amar**.
 
+Pero claro, Jekyll lo sabe usar el selecto club de los <s><i>frik...</i></s> desarrolladores <3
 
 ## Instalación
 
@@ -62,7 +72,7 @@ En Ubuntu:
 “No, señor, tengo por norma que cuanto más sospechosa me parece una cosa, menos preguntas hago.”
 {:.hyde}
 
-Para crear un nuevo sitio llamado `mysite` (por lo que más quieras, ¡cambia el nombre!):
+Para crear un nuevo sitio llamado `mysite` (por lo que más quieras, ¡cambia ese nombre!):
 
     $ jekyll new mysite
     $ cd mysite
@@ -73,8 +83,6 @@ La configuración principal del sitio está en el fichero `_config.yml`. Edítal
 title: Titulitis Titilante
 email: roedor@ipfs.universe
 description: "Esto te va a destruir"
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
 [...]
 ```
 
@@ -132,7 +140,7 @@ Ex importante **leer**, repito, **leer** la salida de los comandos que escribimo
 
 ➜ ¿Y qué haces que aún no lo has abierto?
 
-> Weehhh tampoco es que haga falta leer detalladamente todo lo que pare un comando. Con el tiempo aprendes a localizar lo que te puede interesar. Como ya te debería pasar con `ifconfig`, ¿no? Al principio cuesta, I give you that.
+> Weehhh tampoco es que haga falta leer detalladamente todo lo que pare un comando. Con el tiempo aprendes a localizar lo que te puede interesar.
 
 Espera, espera. ¿Recuerdas el fichero `DrJekyll/MrHyde.md` que creamos más arriba? Lo tienes en <http://localhost:4000/DrJekyll/MrHyde.html>.
 
@@ -145,22 +153,74 @@ Esto de `jekyll serve` es lo que nos permite realizar el **desarrollo de la web*
 
 ---
 
-## Subir a una GitHub Pages
+## Publicar GitHub Pages
 
-To be done...
+“...y en mi caso, ser tentado, aunque fuera levemente, suponía caer.”
+{:.hyde}
+
+En tu cuenta de GitHub, [configura un repositorio como página de GitHub](https://guides.github.com/features/pages/). Tras esto:
+
+- Puedes poner ficheros `.html` y `.css` para que se muestren.
+- Puedes usarlo como web de Jekyll.
+
+Adivina cuál de los dos puntos anteriores vamos a hacer *(guiño-quiño-codazo-codazo)*.
+
+1. Antes de nada, instala `git` en tu máquina:
+```bash
+$ sudo apt-get install git
+```
+
+2. Crea en la página de GitHub un repositorio con el nombre que va a tener tu web `<user-name>.github.io`.
+
+3. Luego [clona el respositorio de GitHub](https://help.github.com/articles/cloning-a-repository/) en tu máquina:
+```
+$ git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY
+```
+
+4. Con esto se crea un directorio con el nombre de tu repositorio. Copia en él todos los ficheros que tenías en el directorio que tenías con Jekyll.
+
+5. Comprueba que todo funciona en tu máquina local correctamente haciendo `jekyll build` y comprobando que no indique errores.
+
+6. Para subirlo a GitHub, realiza lo siguiente:
+```bash
+$ cd /ruta/de/tu/username.github.io
+$ git add *
+$ git commit -m "Mis cambios en la web"
+$ git push
+```
+
+¡Y ya está! Con esto has subido tu página a uno de los mejores servidores de alojamiento web estático de la actualidad. Mira tu web en:
+
+> *http://YOUR-USERNAME.github.io*
+
+Tras realizar cualquier cambio a tus ficheros en Markdown, sólo necesitas realizar los comandos del último paso, y la web se actualiza automáticamente. ¡Pruébalo!
 
 
-<b>I. Peterson:</b> What are you going to do?<br>
-<b>Dr. H. Jekyll:</b> Something so simple. I'm going to put an end to all that confusion.<br>
-<b>Mr. E. Hyde:</b> You're looking for a man named Hyde.<br>
-<b>Dr. H. Jekyll:</b> Hyde? I'M DR. HENRY JEKYLL!!
-{:.hyde style="text-align: left; padding-left: 5rem;"}
+![Ornamento](/assets/jekyll/Ornament.png){:.centerblock #ornamento}
 
+
+“No es que pensara en resucitar a Hyde; la simple idea de hacer eso me asustaba hasta el paroxismo: no, era mi propia persona la que una vez más estaba tentada de jugar con mi conciencia; y a escondidas, como un vulgar pecador, fue como acabé cediendo a los asaltos de la tentación.”
+{:.hyde}
+
+Y con esto podemos dar concluido este viaje por el mundo del Dr. Jekyll y el misterioso Mr. Hyde, donde la dualidad de la naturaleza humana se nos muestra en su más crudo semblante.
 
 ---
 
-{::options parse_block_html="true" /}
-<div style="font-size: 0.75rem; opacity: 0.5;">
-Créditos
-Imagen: [Jonathan Silva](http://www.johnny5ive.com) en [Behance](https://www.behance.net/gallery/14998873/Dr-Jekyll-Mr-Hyde).
-</div>
+
+Créditos imagen: [Jonathan Silva](http://www.johnny5ive.com) en [Behance](https://www.behance.net/gallery/14998873/Dr-Jekyll-Mr-Hyde). Ornamento de [Freepik](https://www.freepik.com/free-vector/ornamental-elements-collection_1188382.htm).
+{:style="font-size: 0.75rem; opacity: 0.5;"}
+
+
+
+{% comment %}
+
+Citas del libro
+---------------
+
+“Pero la tentación de un descubrimiento tan singular y profundo superó finalmente cualquier asomo de alarma.”
+
+“Fue en la faceta moral, y en mi propia persona, donde aprendí a reconocer la completa y primitiva dualidad del hombre; me di cuenta de que, de las dos naturalezas que luchaban en el campo de batalla de mi conciencia, aun cuando podía decirse con razón que yo era cualquiera de las dos, ello se debía únicamente a que era radicalmente ambas”
+
+“Supongo que cuando un borracho razona consigo mismo acerca de su vicio, ni una sola vez entre quinientas se siente afectado por los peligros que le hace correr su brutal insensibilidad física”
+
+{% endcomment %}
