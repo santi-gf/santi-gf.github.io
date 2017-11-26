@@ -23,6 +23,10 @@ date: 2017-11-25
     margin-top: 0px;
   }
   
+  #hydeimg {
+    max-width: 300px;
+  }
+  
 </style>
 
 
@@ -31,7 +35,8 @@ date: 2017-11-25
 <p>—R. Louis Stevenson (1986)</p>
 </div>
 
-![Dr. Jekyll y Mr. Hyde]({{ "/assets/jekyll.png" | absolute_url }}){:.centerblock}
+<!-- Si la imagen tiene el tamaño final (~300px), se ve borrosa en iOS. Por eso uso una más grande. -->
+![Dr. Jekyll y Mr. Hyde](/assets/jekyll.png){:.centerblock #hydeimg}
 
 
 
@@ -150,7 +155,7 @@ To be done...
 <b>Dr. H. Jekyll:</b> Something so simple. I'm going to put an end to all that confusion.<br>
 <b>Mr. E. Hyde:</b> You're looking for a man named Hyde.<br>
 <b>Dr. H. Jekyll:</b> Hyde? I'M DR. HENRY JEKYLL!!
-{:.hyde style="text-align: left;"}
+{:.hyde style="text-align: left; padding-left: 5rem;"}
 
 
 ---
