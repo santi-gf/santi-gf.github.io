@@ -38,7 +38,6 @@ date: 2017-11-25
 <!-- Si la imagen tiene el tamaño final (~300px), se ve borrosa en iOS. Por eso uso una más grande. -->
 ![Dr. Jekyll y Mr. Hyde](/assets/jekyll.png){:.centerblock #hydeimg}
 
-{% last_modified_at %}
 
 ## Sobre Jekyll
 

@@ -6,6 +6,9 @@ description:         'Procrastinación Perceptiva'
 url:                 https://santi-gf.github.io
 baseurl:             ''
 
+# This is used in `head.html` to make iOS update the favicon
+favicon-date:        '20171126'
+
 author:
   name:              Santi
   url:               https://santi-gf.github.io
