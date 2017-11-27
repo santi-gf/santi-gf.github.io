@@ -108,6 +108,8 @@ Si quieres conocer a Mr. Hyde:
 
 > Jekyll se ha tomado su poción y se ha transformado en Mr. Hyde.
 
+➜ **Ejecuta `jekyll build` <u>siempre</u> desde el directorio principal del sitio!!! (el que creaste con `jekyll new`)**
+
 Se ha creado el directorio `_site`.<br>
 -- Suena a que es donde se genera el sitio, ¿verdad?<br>
 -- Es que es donde se genera el sitio.
@@ -115,7 +117,15 @@ Se ha creado el directorio `_site`.<br>
 Venga, venga. Abre el fichero `_site/index.html` con un navegador.<br>¿Ves? No muerde *(aunque no te culpo: el verdadero Mr. Hyde sí)*.
 
 Ahora, prueba esto:
-- Crea un nuevo fichero nuevo en el directorio principal del sitio, con extensión `.md`. (Venga, escribe algo interesante y luego vuelves, anda.)
+- Crea un nuevo fichero en el directorio principal del sitio, con extensión `.md`.
+- En las primeras líneas pon algo como lo siguiente para que Jekyll le aplique la plantilla correspondiente y lo transforme a HTML.
+```yaml
+---
+layout: default
+title: "Título de esta página"
+---
+```
+- Tras ello, escribe algo interesante en Markdown.
 - No, en serio, escribe algo menos aburrido que *Holaaaaa zzz...*
 - Ejecuta de nuevo `jekyll build` y comprueba que se ha creado en `_site`.
 
@@ -147,7 +157,7 @@ Of course, just do this thing and watch the magic:
 
     $ jekyll serve
 
-Ex importante **leer**, repito, **leer** la salida de los comandos que escribimos. ¿Ves algo interesante, digamos `Server address: http://...`?
+Es importante **leer**, repito, **leer** la salida de los comandos que escribimos. ¿Ves algo interesante, digamos `Server address: http://...`?
 
 ➜ ¿Y qué haces que aún no lo has abierto?
 
