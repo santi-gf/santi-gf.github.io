@@ -198,8 +198,8 @@ Texto <mark>resaltado y <b>negrita y <sub>subíndice</sub></b></mark>
 La etiqueta `<a href="">...</a>` permite poner un hipervínculo o enlace. También se puede poner un enlace para enviar un email o llamar teléfono.
 
 {% capture mycode %}
-<a href="http://servidor/recurso">
-  Visita mi web
+<a href="https://jekyllrb.com/">
+  Visita esta web
 </a>
 <br>
 <a href="mailto:persona@dominio.com">

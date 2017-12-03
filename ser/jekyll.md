@@ -163,7 +163,7 @@ Es importante **leer**, repito, **leer** la salida de los comandos que escribimo
 
 > Weehhh tampoco es que haga falta leer detalladamente todo lo que pare un comando. Con el tiempo aprendes a localizar lo que te puede interesar.
 
-Espera, espera. ¿Recuerdas el fichero `DrJekyll/MrHyde.md` que creamos más arriba? Lo tienes en <http://localhost:4000/DrJekyll/MrHyde.html>.
+Espera, espera. ¿Recuerdas el fichero `DrJekyll/MrHyde.md` que creamos más arriba? Lo tienes en `http://localhost:4000/DrJekyll/MrHyde.html`.
 
 
 Esto de `jekyll serve` es lo que nos permite realizar el **desarrollo de la web** en nuestro propio entorno. Cuando queramos subirlo a un servidor web, simplemente subimos los contenidos de `_site`.
