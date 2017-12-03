@@ -31,7 +31,3 @@ kramdown:
 
 sass:
   style: compressed # Minify css
-
-plugins:
-  - jekyll-last-modified-at
-
