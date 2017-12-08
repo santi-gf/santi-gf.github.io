@@ -47,7 +47,6 @@ gem install html-proofer
 2. Añade lo siguiente al archivo `Rakefile`:
 ```ruby
 require 'html-proofer'
-
 task :test do
   sh "bundle exec jekyll build"
   options = { :assume_extension => true }
