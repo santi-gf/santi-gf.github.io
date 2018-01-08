@@ -63,6 +63,7 @@ Es muy común en Linux que los ficheros de texto plano no tengan extensión, per
 
 > **Consejo:** procura evitar siempre espacios en los nombres de ficheros y directorios para mayor comodidad.
 
+Si en algún momento un comando no termina y no te devuelve al prompt, puedes pulsar <kbd>Ctrl</kbd>+<kbd>C</kbd> para finalizarlo.
 
 ### `pwd` --- Directorio de trabajo
 
@@ -307,6 +308,16 @@ $ cat file | grep -n --color=auto word
 Al comando `grep` se le saca mucho más potencial cuando se utilizan patrones (llamados técnicamente *expresiones regulares*) en la búsqueda, pero eso es algo que se queda fuera del alcance de este tutorial.
 
 
+### `man` --- Manual de ayuda
+
+Puedes buscar información sobre lo que hace y las opciones que tiene un comando mirándolo en el manual del sistema.
+```bash
+$ man ls
+```
+
+Puedes moverte con los cursores para desplazarte arriba y abajo, y saltar una página con <kbd>space</kbd>. Se sale con la tecla <kbd>q</kbd>.
+
+Además, muchos comandos incluyen una opción `-h` o `--help`, que muestra información breve sobre las opciones que admiten, aunque los que hemos visto en esta página son suficientemente básicos como para no incluirla.
 
 
 
