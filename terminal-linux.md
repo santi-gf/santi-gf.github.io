@@ -3,7 +3,6 @@ layout: article
 title: Terminal de Linux
 subtitle: Introducción a la terminal
 # date: 2017-12-26
-hidden: true
 ---
 <style>
 h3 {
@@ -29,8 +28,11 @@ Algunas aclaraciones:
 
 **CLI**
 
-: *Command Line Interface*. Es una forma de utilizar un ordenador basada enteramente por texto, sin utilización de gráficos ni de ratón.
+: *Command Line Interface*. Es una forma de utilizar un ordenador basada enteramente por texto escribiendo comandos, sin utilización de gráficos ni de ratón.
 
+
+**Prompt**
+: Para indicar que se puede comenzar a escribir un comando, se muestra primero un texto con algo de información, llamado *prompt*. Se puede personalizar por completo, pero es común que muestre un `$` en una sesión de *usuario*, y `#` en una de *superusuario (root)*.
 
 **Shell**
 
@@ -50,8 +52,6 @@ El nombre viene de la utilización de ordenadores de tipo *mainframe*, sumamente
 : Históricamente, era el puerto y la conexión digital en el *mainframe* al que se conectaba una terminal, pero actualmente no hay una clara distinción con la terminal.
 En Linux se puede acceder a una consola virtual usando las teclas <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>F1</kbd>, y más consolas alternando con <kbd>F2</kbd>, <kbd>F3</kbd>... Se puede volver al entorno gráfico con <kbd>F7</kbd> (puede cambiar según el sistema).
 
-**Prompt**
-: Es el texto que aparece en la consola antes del comando que tú escribes, y se puede personalizar completamente (hay [m](https://github.com/justjanne/powerline-go)-[u](https://github.com/azymohliad/qb-prompt)-[c](http://mikebuss.com/2014/02/02/a-beautiful-productive-terminal-experience/)-[h](http://aaronscherer.me/2013/04/20/beautiful-bash-prompt/)-[a](http://brettterpstra.com/2009/11/17/my-new-favorite-bash-prompt/)-[s](http://ezprompt.net) posibilidades). Generalmente muestra al final un `$` para indicar una sesión de *usuario*, y `#` para indicar sesión de *superusuario (root)*.
 
 <!-- https://unix.stackexchange.com/a/4132 -->
 
@@ -78,19 +78,27 @@ $ pwd
 Recuerda que:
 - Una ruta absoluta comienza siempre con `/`.
 - Una ruta relativa se comienza a escribir partiendo del directorio en el que te encuentras (ver con `pwd`).
-- `..` hace referencia al directorio padre, y se puede usar en cualquier momento.
-- `.` hace referencia al directorio actual.
+- Un punto `.` significa el directorio actual.
+- Dos puntos `..` significan el directorio padre.
 
 Ejemplos:
 ```bash
 $ cd dir/subdir
-$ cd /home/usr/hyde
+$ cd ./dir/subdir  # Equivalente al anterior
+$ cd /usr/bin
 $ cd ..
 $ cd ../dir
 $ cd ../../dir
 ```
 
 > **Truco:** comienza a escribir el nombre de algún fichero o directorio que exista, y pulsa la tecla <kbd>TAB</kbd> para que se **autocomplete**. Así ahorras tiempo y evitas errores.
+
+
+Las siguientes entradas de `cd` son muy frecuentes:
+- `cd ~`: La tilde (*virgulilla*) lleva al directorio de inicio del usuario.
+- `cd -`: El guión lleva al anterior directorio previo al último `cd`.
+
+
 
 ### `ls` --- Listar contenidos
 Lista contenidos del directorio en el que te encuentras.
@@ -216,6 +224,7 @@ $ cat fichero
 ```
 
 
+
 ### `>` y `>>` --- Redirección a fichero
 
 Muchos comandos como `echo` y `cat` devuelven texto como salida. Este texto se puede redirigir a un fichero escribiendo `comando > fichero`.
@@ -242,7 +251,7 @@ $ cat file1 >> file2
 
 ### `|` --- Redirección entre comandos
 
-Este símbolo se llama **pipe** (tubería), y permite enviar la salida de un comando no a un fichero, sino como entrada de otro comando. Se escribe como `comando1 | comando2`, y fuciona si el segundo comando acepta entradas por tubería.
+Este símbolo se llama **pipe** (tubería), y permite enviar la salida de un comando no a un fichero, sino como entrada de otro comando. Una *pipeline* se escribe como `comando1 | comando2 | comando3 ...`. Ten en cuenta que no todos los comandos devuelven un resultado.
 
 Aquí usamos el comando `wc` (*word count*), que da estadísticas sobre el texto que recibe (también se puede usar como `wc file`).
 ```bash
@@ -266,22 +275,40 @@ $ cat names.txt | sort | uniq
 $ sort names.txt | uniq
 ```
 
-{% comment %}
+
+### `head` y `tail` --- Partes de un texto
+
+Estos comandos permiten ver las primeras y últimas líneas de un archivo de texto. La opción `-n 3` indica que muestre sólo 3 líneas; sin esa opción muestra 10 por defecto.
+
+```bash
+$ head file
+$ head -n 15 file
+
+$ cat file | head -n 25 | tail -n 1
+```
+
+El último comando imprime únicamente la línea número 25 del fichero.
+
+
 ### `grep` --- Filtrar líneas de texto
 
-```bash
-cat /etc/passwd | grep root
-grep -i cereza recetas.txt
-```
-
-### `sed` --- Reemplazar contenido
+Con `grep` podemos filtrar los contenidos de texto por líneas, por ejemplo para saber si un fichero contiene cierta información, y dónde.
 
 ```bash
-$ echo "Hola Mundo" | sed 's/Hola/Bye bye/g'
-$ sed 's/snow/rain/g' forests.txt
+$ cat /etc/passwd | grep root
+$ grep -i cereza recetas.txt
 ```
 
-{% endcomment %}
+Es muy útil usar los parámetros `-n` para que indique el número de línea, y `--color=auto` para que muestre colores.
+```bash
+$ cat file | grep -n --color=auto word
+```
+
+Al comando `grep` se le saca mucho más potencial cuando se utilizan patrones (llamados técnicamente *expresiones regulares*) en la búsqueda, pero eso es algo que se queda fuera del alcance de este tutorial.
+
+
+
+
 
 
 ## Para profundizar
