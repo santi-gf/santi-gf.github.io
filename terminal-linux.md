@@ -297,6 +297,11 @@ Con `grep` podemos filtrar los contenidos de texto por líneas, por ejemplo para
 
 ```bash
 $ cat /etc/passwd | grep root
+$ grep cereza recetas.txt
+```
+
+Con la opción `-i` se invierte la búsqueda, y devuelve las líneas que no contienen el término de búsqueda.
+```bash
 $ grep -i cereza recetas.txt
 ```
 
@@ -306,6 +311,13 @@ $ cat file | grep -n --color=auto word
 ```
 
 Al comando `grep` se le saca mucho más potencial cuando se utilizan patrones (llamados técnicamente *expresiones regulares*) en la búsqueda, pero eso es algo que se queda fuera del alcance de este tutorial.
+
+
+**Ejemplo:** el comando `ps aux` muestra procesos en ejecución. Con el siguiente comando podemos filtrar por el nombre de alguno de ellos y ver información (quizás para matar ese proceso).
+```bash
+$ ps aux | grep bash
+```
+
 
 
 ### `man` --- Manual de ayuda
@@ -318,6 +330,7 @@ $ man ls
 - Desplázate con los cursores <kbd>↑</kbd> y <kbd>↓</kbd>.
 - Saltar una página con <kbd>space</kbd>.
 - Busca una palabra tecleando la barra<kbd>/</kbd> y luego la palabra: `/texto`.
+- Con la tecla <kbd>g</kbd> vas al comienzo de la página, y con <kbd>G</kbd> al final.
 - Sal del manual con la tecla <kbd>q</kbd>.
 
 
@@ -327,6 +340,15 @@ $ man ls
 
 Además, muchos comandos incluyen una opción `-h` o `--help`, que muestra información breve sobre las opciones que admiten, aunque los que hemos visto en esta página son suficientemente básicos como para no incluirla.
 
+
+
+
+{% comment %}
+
+
+
+
+{% endcomment %}
 
 
 
