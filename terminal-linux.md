@@ -50,7 +50,7 @@ El nombre viene de la utilización de ordenadores de tipo *mainframe*, sumamente
 **Consola**
 
 : Históricamente, era el puerto y la conexión digital en el *mainframe* al que se conectaba una terminal, pero actualmente no hay una clara distinción con la terminal.
-En Linux se puede acceder a una consola virtual usando las teclas <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>F1</kbd>, y más consolas alternando con <kbd>F2</kbd>, <kbd>F3</kbd>... Se puede volver al entorno gráfico con <kbd>F7</kbd> (puede cambiar según el sistema).
+En Linux se puede acceder a una consola virtual usando las teclas <kbd>Ctrl</kbd><kbd>Alt</kbd><kbd>F1</kbd>, y más consolas alternando con <kbd>F2</kbd>, <kbd>F3</kbd>... Se puede volver al entorno gráfico con <kbd>F7</kbd> (puede cambiar según el sistema).
 
 
 <!-- https://unix.stackexchange.com/a/4132 -->
@@ -63,7 +63,7 @@ Es muy común en Linux que los ficheros de texto plano no tengan extensión, per
 
 > **Consejo:** procura evitar siempre espacios en los nombres de ficheros y directorios para mayor comodidad.
 
-Si en algún momento un comando no termina y no te devuelve al prompt, puedes pulsar <kbd>Ctrl</kbd>+<kbd>C</kbd> para finalizarlo.
+Si en algún momento un comando no termina y no te devuelve al prompt, puedes pulsar <kbd>Ctrl</kbd><kbd>C</kbd> para finalizarlo.
 
 ### `pwd` --- Directorio de trabajo
 
