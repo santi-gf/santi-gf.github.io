@@ -315,7 +315,15 @@ Puedes buscar información sobre lo que hace y las opciones que tiene un comando
 $ man ls
 ```
 
-Puedes moverte con los cursores para desplazarte arriba y abajo, y saltar una página con <kbd>space</kbd>. Se sale con la tecla <kbd>q</kbd>.
+- Desplázate con los cursores <kbd>↑</kbd> y <kbd>↓</kbd>.
+- Saltar una página con <kbd>space</kbd>.
+- Busca una palabra tecleando la barra<kbd>/</kbd> y luego la palabra: `/texto`.
+- Sal del manual con la tecla <kbd>q</kbd>.
+
+
+
+
+### Más ayuda
 
 Además, muchos comandos incluyen una opción `-h` o `--help`, que muestra información breve sobre las opciones que admiten, aunque los que hemos visto en esta página son suficientemente básicos como para no incluirla.
 
