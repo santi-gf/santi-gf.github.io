@@ -252,7 +252,7 @@ $ cat file1 >> file2
 
 ### `|` --- Redirección entre comandos
 
-Este símbolo se llama **pipe** (tubería), y permite enviar la salida de un comando no a un fichero, sino como entrada de otro comando. Una *pipeline* se escribe como `comando1 | comando2 | comando3 ...`. Ten en cuenta que no todos los comandos devuelven un resultado.
+Este símbolo se llama **pipe** (tubería o [pelca](https://es.wikipedia.org/wiki/Pleca)), y permite enviar la salida de un comando no a un fichero, sino como entrada de otro comando. Una *pipeline* se escribe como `comando1 | comando2 | comando3 ...`. Ten en cuenta que no todos los comandos devuelven un resultado.
 
 Aquí usamos el comando `wc` (*word count*), que da estadísticas sobre el texto que recibe (también se puede usar como `wc file`).
 ```bash
