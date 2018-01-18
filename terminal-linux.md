@@ -356,6 +356,6 @@ Además, muchos comandos incluyen una opción `-h` o `--help`, que muestra infor
 
 - [The Art of Command Line (github)](https://github.com/jlevy/the-art-of-command-line)
 - [Bash guide (github)](https://github.com/Idnan/bash-guide)
-
+- [Codeacademy > Learn the command line](https://www.codecademy.com/courses/learn-the-command-line/lessons/redirection/exercises/sed?action=lesson_resume&link_content_target=interstitial_undefined)
 
 
