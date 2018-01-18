@@ -11,6 +11,9 @@ El editor `vi` data de los comienzos de UNIX, pero el `vim` (*vi improved*) es u
 
 Vim puede editar ficheros enormes (GB si te pones) sin despeinarse.
 
+
+## Editor modal
+
 Según abrimos `vim`, aparece un mensaje como el siguiente:
 
 
@@ -19,12 +22,12 @@ Según abrimos `vim`, aparece un mensaje como el siguiente:
 Tanto el texto como las `~` no son texto del fichero, 
 sino relleno con información que también permite ver dónde acaba el fichero.
 
-## Editor modal
 
 Vim es un editor modal, que resulta el gran elemento de confusión para los que no lo conocen de entrada. Tiene dos modos principales:
 
 - **Modo normal**:  por el que comienza según lo abrimos, y permite escribir teclas que realizan acciones, pero no escriben texto.
 - **Modo de inserción**: en este modo escribimos texto hasta pulsar la *tecla de oro*: <kbd>ESC</kbd>.
+
 
 ## Uso super mínimo
 
