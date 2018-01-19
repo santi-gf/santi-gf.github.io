@@ -225,6 +225,16 @@ Dime tu nombre: Mr. Hamster
 Hola, Mr. Hamster
 ```
 
+Ejecuta y analiza este otro ejemplo:
+
+```bash
+#!/bin/bash
+
+read -p "Dime un nombre de usuario: " usuario
+echo "Estos son los contenidos de tu carpeta de inicio:"
+ls /home/$usuario
+```
+
 
 ## Condiciones `if`
 
@@ -256,13 +266,74 @@ then
 fi
 ```
 
+También puedes comprobar que una cadena sea **diferente de** otra con `!=`.
+
 También se pueden hacer comprobaciones sobre si ficheros o directorios existen:
 
 ```bash
 read -p "Dime un fichero: " fichero
-if [ -r $fichero ]
+if [ -a $fichero ]
 then
     echo "El fichero existe"
 fi
 ```
+
+Se puede hacer una comprobación opuesta añadiendo `!` antes de la opción (separada por espacio):
+
+```bash
+read -p "Dime un fichero: " fichero
+if [ ! -a $fichero ]
+then
+    echo "El fichero no existe"
+fi
+```
+
+Esta tabla resume algunas comprobaciones sobre ficheros:
+
+`-a` | ¿Existe el archivo? |
+`-d` | ¿Es un directorio?  |
+`-f` | ¿Es un fichero?     |
+`-r` | ¿Es un fichero de lectura?     |
+`-w` | ¿Se puede escribir el fichero? |
+`-x` | ¿Es un fichero ejecutable?     |
+
+También puedes realizar comprobaciones del tipo *si <condición> entonces <haz_esto> si no <haz_esto_otro>* añadiendo `else`: 
+
+```bash
+if [ <condición> ]
+then
+    # Hacer algo
+else
+    # Hacer otra cosa
+fi
+```
+
+Este ejemplo es una versión más completa de otro visto previamente:
+
+```bash
+read -p "Dime un nombre de usuario: " usuario
+
+if [ -d /home/$usuario ]
+then
+    echo "Estos son los contenidos de tu carpeta de inicio:"
+    ls /home/$usuario
+else
+    echo "Ese usuario no tiene carpeta de inicio"
+fi
+```
+
+
+## Bucles `for`
+
+Prueba el siguiente código con un bucle `for`:
+
+```bash
+#!/bin/bash
+for variable in 1 2 3 4 5
+do
+   echo "Imprimiento $variable"
+done
+```
+
+Todas las líneas de código entre `do` y `done` se repiten varias veces, y lo único que cambia es el contenido de la variable que crea el bucle `for`.
 
