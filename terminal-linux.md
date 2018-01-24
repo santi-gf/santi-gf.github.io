@@ -291,6 +291,22 @@ $ cat file | head -n 25 | tail -n 1
 El último comando imprime únicamente la línea número 25 del fichero.
 
 
+### `wc` --- Word count
+
+Este comando muestra estadísticas sobre un fichero o la entrada por tubería:
+
+```bash
+$ echo "hola mundo" | wc
+       1       2      11
+$ wc README.md 
+      37     163    1269 README.md
+```
+
+Esto imprime, por orden: número de **líneas**, **palabras** y **caracteres** del texto.
+
+Debes tener en cuenta que la mayoría de los comandos como `echo` añaden el carácter de salto de línea, y `wc` también lo tiene en cuenta, dado que es parte de su *input*. Por eso, en `hola mundo` imprime 11 caracteres, en vez de los 10 que podríamos decir que hay.
+
+
 ### `grep` --- Filtrar líneas de texto
 
 Con `grep` podemos filtrar los contenidos de texto por líneas, por ejemplo para saber si un fichero contiene cierta información, y dónde.
@@ -328,9 +344,7 @@ $ man ls
 ```
 
 - Desplázate con los cursores <kbd>↑</kbd> y <kbd>↓</kbd>.
-- Saltar una página con <kbd>space</kbd>.
 - Busca una palabra tecleando la barra<kbd>/</kbd> y luego la palabra: `/texto`.
-- Con la tecla <kbd>g</kbd> vas al comienzo de la página, y con <kbd>G</kbd> al final.
 - Sal del manual con la tecla <kbd>q</kbd>.
 
 
