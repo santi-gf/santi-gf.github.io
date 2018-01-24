@@ -16,6 +16,9 @@ h3 {
   -ms-user-select: none;
   user-select: none;
 }
+.text-tip {
+    color: #941818;
+}
 </style>
 
 * Toc
@@ -321,17 +324,44 @@ Con la opción `-i` se invierte la búsqueda, y devuelve las líneas que no cont
 $ grep -i cereza recetas.txt
 ```
 
-Es muy útil usar los parámetros `-n` para que indique el número de línea, y `--color=auto` para que muestre colores.
-```bash
-$ cat file | grep -n --color=auto word
-```
-
-Al comando `grep` se le saca mucho más potencial cuando se utilizan patrones (llamados técnicamente *expresiones regulares*) en la búsqueda, pero eso es algo que se queda fuera del alcance de este tutorial.
-
-
-**Ejemplo:** el comando `ps aux` muestra procesos en ejecución. Con el siguiente comando podemos filtrar por el nombre de alguno de ellos y ver información (quizás para matar ese proceso).
+**Ejemplo:** El comando `ps aux` muestra procesos en ejecución. Con el siguiente comando podemos filtrar por el nombre de alguno de ellos y ver información (quizás para matar ese proceso).
 ```bash
 $ ps aux | grep bash
+```
+
+
+También podemos emplear patrones (llamados técnicamente *expresiones regulares*) para afinar la búsqueda:
+
+- `^` significa comienzo de línea
+- `$` significa fin de línea
+
+Así, podemos filtrar por las líneas que no simplemente contengan, sino que comiencen o finalicen por un texto:
+
+Usuarios del sistema cuyo nombre comienza por `root` (partiendo de que en `/etc/passwd` cada línea comienza por el nombre de usuario):
+```bash
+$ cat /etc/passwd | grep "^root"
+root:x:0:0:root:/root:/bin/bash
+```
+
+> ➜ Al usar `grep` es recomendable escribir el término entre comillas, aunque si el patrón que escribimos no contiene espacios no es necesario.
+{:.text-tip}
+
+
+**Ejemplo:** Lista únicamente los directorios (partiendo de que `ls -l` comienza por `d` sólo para directorios):
+```bash
+$ ls -l
+drwxr-xr-x  1 user user    841 24 Jan 19:27 imagenes
+-rw-r--r--  1 user user  11940  6 Dec 13:27 lista.txt
+-rw-r--r--  1 user user   2822  6 Dec 13:27 txt_user
+-rw-r--r--  1 user user    176 19 Jan 16:28 README.md
+drwxr-xr-x  1 user user   4085  8 Dec 18:34 recursos
+-rw-r--r--  1 user user    358  7 Dec 12:11 registro.txt
+$ ls -l | grep "^d"
+drwxr-xr-x  1 user user    841 24 Jan 19:27 imagenes
+drwxr-xr-x  1 user user   4085  8 Dec 18:34 recursos
+$ ls -l | grep ".txt$"
+-rw-r--r--  1 user user  11940  6 Dec 13:27 lista.txt
+-rw-r--r--  1 user user    358  7 Dec 12:11 registro.txt
 ```
 
 
