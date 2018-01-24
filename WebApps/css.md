@@ -180,9 +180,9 @@ Para cambiar el estilo de la clase anterior desde CSS se usa el punto `.` antes 
 Una clase **no puede comenzar por un número**, pero puede contenerlos.
 
 
-## Colores
+<!-- ## Colores
 
-Existen unas cuantas formas diferentes de especificar colores en CSS. 
+Existen unas cuantas formas diferentes de especificar colores en CSS.  -->
 
 <!-- 
 
