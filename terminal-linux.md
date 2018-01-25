@@ -16,9 +16,15 @@ h3 {
   -ms-user-select: none;
   user-select: none;
 }
+.text-tip::before {
+    content:"➜";
+    float: left;
+    padding-right: 5px;
+}
 .text-tip {
     color: #941818;
-}
+} 
+
 </style>
 
 * Toc
@@ -343,7 +349,7 @@ $ cat /etc/passwd | grep "^root"
 root:x:0:0:root:/root:/bin/bash
 ```
 
-> ➜ Al usar `grep` es recomendable escribir el término entre comillas, aunque si el patrón que escribimos no contiene espacios no es necesario.
+> Al usar `grep` es recomendable escribir el término entre comillas, aunque si el patrón que escribimos no contiene espacios no es necesario.
 {:.text-tip}
 
 
@@ -365,6 +371,47 @@ $ ls -l | grep ".txt$"
 ```
 
 
+### `cut` --- Cortar porciones de texto
+
+Este comando permite quedarnos con partes de texto que estén bien estructurados siempre que podamos establecer un carácter que divida los contenidos.
+
+Por ejemplo, un fichero en formato `csv` utiliza la coma o el punto y coma para separar los campos:
+
+Puedes utilizar `cut` para tratar este fichero como una tabla y filtrar una o varias columnas. Hay dos opciones importantes:
+
+- `-d` (*delimiter*) Permite usar el carácter que le indiques como delimitador:
+  - `-d' '` usa el espacio como delimitador.
+  - `-d'\t'` usa el tabulador (es el valor por defecto si no se indica esta opción).
+- `-f` (*field*) Permite indicar los campos (columnas) con los que nos queremos quedar:
+  - `-f1` extrae el primer campo
+  - `-f1,2,4` extrae los campos 1, 2 y 4.
+  - `-f1-3` extrae los campos del 1 al 3
+
+Por ejemplo, partiendo del siguiente fichero llamado `Tarantino.csv`:
+
+    Pulp Fiction,1994,5
+    Reservoir Dogs,1992,4
+    Kill Bill: Volume 1,2003,4.5
+    Inglourious Basterds,2009,4.5
+    Django Unchained,2012,5
+
+```bash
+$ cat Tarantino.csv | cut -d',' -f2
+1994
+1992
+2003
+2009
+2012
+$ cat Tarantino.csv | cut -d',' -f1,3
+Pulp Fiction,5
+Reservoir Dogs,4
+Kill Bill: Volume 1,4.5
+Inglourious Basterds,4.5
+Django Unchained,5
+```
+    
+    
+
 
 ### `man` --- Manual de ayuda
 
@@ -385,11 +432,41 @@ $ man ls
 Además, muchos comandos incluyen una opción `-h` o `--help`, que muestra información breve sobre las opciones que admiten, aunque los que hemos visto en esta página son suficientemente básicos como para no incluirla.
 
 
+---
+
+## Ejercicios propuestos
+
+
+- En una única línea: usando `echo` escribe en cuatro nombres de persona, **uno por línea**, y haz que se guarde en el fichero `nobmres`. El resultado debería ser algo como:
+
+    ```bash
+    Laura
+    Edward
+    Sarah
+    Julian
+    ```
+
+- Lista todos los ficheros markdown `.md`.
+- Copia todos los ficheros `.md` al directorio `markdown` (suponiendo que ya está creado).
+- Filtra los resultados de `ls -l` para mostrar únicamente:
+  - Los directorios
+  - Los ficheros de 2017.
+  - Los ficheros (no directorios) que sólo tienen permiso de lectura para el usuario.
+- Busca en el `man` la opción para que `ls` liste los ficheros ordenados por tamaño (en inglés, *size*).
+- El comando `dig`, con la opción `any`, muestra todos los registros DNS de un servidor (ej: `dig twitter.com any`). Úsalo para extraer únicamente los registros de correo electrónico (`MX`).
+
+
+<!-- ## Ejemplos resueltos
+
+Ejercicio más elaborado: Obtener el tiempo -->
+
+
 
 
 {% comment %}
 
-
+$ ping -c200 google.com | grep "bytes from" | cut -d' ' -f8 | cut -d'=' -f2 > pingtimes
+$ gnuplot -p -e 'plot "pingtimes"'
 
 
 {% endcomment %}
