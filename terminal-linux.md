@@ -24,7 +24,12 @@ h3 {
 .text-tip {
     color: #941818;
 } 
-
+.code-small pre {
+    font-size: 0.6rem;
+}
+.code-med pre {
+    font-size: 0.7rem;
+}
 </style>
 
 * Toc
@@ -456,20 +461,122 @@ Además, muchos comandos incluyen una opción `-h` o `--help`, que muestra infor
 - El comando `dig`, con la opción `any`, muestra todos los registros DNS de un servidor (ej: `dig twitter.com any`). Úsalo para extraer únicamente los registros de correo electrónico (`MX`).
 
 
-<!-- ## Ejemplos resueltos
+## Ejemplos resueltos
 
-Ejercicio más elaborado: Obtener el tiempo -->
+### Extraer la línea *n* de un fichero
+
+**Enunciado:**
+Extraer la línea número 4 de un fichero cualquiera.
+
+**Resolución:**
+
+Supongamos el fichero `ciudades`:
+
+    Birmingham
+    Lyon
+    Nüremberg
+    Brno
+    Panaji
+
+Con el comando `head` podemos extraer las 4 primeras líneas:
+
+```bash
+$ cat ciudades | head -n4
+Birmingham
+Lyon
+Nüremberg
+Brno
+```
+
+Y con el comando `tail` podemos extraer la última:
+```bash
+$ cat ciudades | head -n4 | tail -n1
+Brno
+```
 
 
 
 
-{% comment %}
 
+
+### Gráfica *ping*
+
+**Enunciado:**
+
+Crear una gráfica con los tiempos de respuesta a 200 *pings* a un servidor.
+
+Algunos datos:
+
+- `ping -c5 -i0.3` envía 5 paquetes ICMP a un intervalo más corto de 0.3 segundos (por defecto es 1s).
+- Debes extraer del resultado de `ping` únicamente los tiempos de respuesta, y guardarlos en un fichero (ej: `pingtimes`).
+- A partir de ese fichero, puedes crear la gráfica con el comando `gnuplot -p -e 'plot "pingtimes"'`.
+  - Instala *gnuplot* si no lo tienes en tu sistema: `sudo apt-get install gnuplot-x11`.
+
+
+
+**Resolución:**
+
+Tenemos que analizar la salida del comando *ping* (lo probamos sólo con 5 pings por ahora):
+
+```
+$ ping -c5 -i0.3 google.com
+PING google.com (216.58.211.238) 56(84) bytes of data.
+64 bytes from mad01s24-in-f238.1e100.net (216.58.211.238): icmp_seq=1 ttl=55 time=8.98 ms
+64 bytes from mad01s24-in-f238.1e100.net (216.58.211.238): icmp_seq=2 ttl=55 time=13.9 ms
+64 bytes from mad01s24-in-f238.1e100.net (216.58.211.238): icmp_seq=3 ttl=55 time=16.0 ms
+64 bytes from mad01s24-in-f238.1e100.net (216.58.211.238): icmp_seq=4 ttl=55 time=8.87 ms
+64 bytes from mad01s24-in-f238.1e100.net (216.58.211.238): icmp_seq=5 ttl=55 time=18.5 ms
+
+--- google.com ping statistics ---
+10 packets transmitted, 10 received, 0% packet loss, time 9012ms
+rtt min/avg/max/mdev = 8.873/12.859/18.548/3.328 ms
+```
+{:.code-small}
+
+Primero tenemos que filtrar únicamente las líneas que queramos. Podemos fijarnos, por ejemplo, en que las líneas que queremos son las únicas que incluyen el texto "bytes from". Así que podemos filtrar:
+
+```bash
+$ ping -c5 -i0.3 google.com | grep "bytes from"
+64 bytes from mad01s24-in-f238.1e100.net (216.58.211.238): icmp_seq=1 ttl=55 time=8.98 ms
+64 bytes from mad01s24-in-f238.1e100.net (216.58.211.238): icmp_seq=2 ttl=55 time=13.9 ms
+64 bytes from mad01s24-in-f238.1e100.net (216.58.211.238): icmp_seq=3 ttl=55 time=16.0 ms
+64 bytes from mad01s24-in-f238.1e100.net (216.58.211.238): icmp_seq=4 ttl=55 time=8.87 ms
+64 bytes from mad01s24-in-f238.1e100.net (216.58.211.238): icmp_seq=5 ttl=55 time=18.5 ms
+```
+{:.code-small}
+
+Ahora nos debemos quedar únicamente con los tiempos. Podemos ver que podemos separar campos por espacios con `cut` y quedarnos con el que nos interesa:
+
+```bash
+$ ping -c5 -i0.3 google.com | grep "bytes from" | cut -d' ' -f8
+time=8.98
+time=13.9
+time=16.0
+time=8.87
+time=18.5
+```
+{:.code-med}
+
+Y ahora podemos separar campos por el símbolo `=`:
+
+```bash
+$ ping -c5 -i0.3 google.com | grep "bytes from" | cut -d' ' -f8 | cut -d'=' -f2
+8.98
+13.9
+16.0
+8.87
+18.5
+```
+{:.code-med}
+
+Ahora que tenemos esto, podemos modificar el comando para que lo pruebe con 200 paquetes, y escriba el resultado en un fichero, y lo mostramos con *gnuplot*:
+
+```bash
 $ ping -c200 google.com | grep "bytes from" | cut -d' ' -f8 | cut -d'=' -f2 > pingtimes
 $ gnuplot -p -e 'plot "pingtimes"'
+```
 
-
-{% endcomment %}
+![Gráfica con los tiempos de ping]({{ site.baseurl }}{% link /assets/terminal-linux-pingtimes.png %}){:.mx-auto}
 
 
 
