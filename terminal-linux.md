@@ -497,7 +497,7 @@ Brno
 
 
 
-
+{% comment %}
 
 ### Gráfica *ping*
 
@@ -578,7 +578,7 @@ $ gnuplot -p -e 'plot "pingtimes"'
 
 ![Gráfica con los tiempos de ping]({{ site.baseurl }}{% link /assets/terminal-linux-pingtimes.png %}){:.mx-auto}
 
-
+{% endcomment %}
 
 ## Para profundizar
 
