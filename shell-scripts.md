@@ -16,6 +16,17 @@ h3 {
   -ms-user-select: none;
   user-select: none;
 }
+.text-secondary {
+    color: rgb(108, 117, 125);
+}
+.text-tip::before {
+    content:"➜";
+    float: left;
+    padding-right: 5px;
+}
+.text-tip {
+    color: #941818;
+} 
 </style>
 
 Este tutorial es la continuación del tutorial sobre [la terminal de Linux]({{ site.baseurl }}{% link terminal-linux.md %}).
@@ -238,23 +249,28 @@ ls /home/$usuario
 
 ## Condiciones `if`
 
-Dentro de un script puedes comprobar condiciones del tipo *si <condición> entonces <haz_esto>*. Esto se escribe así:
+Dentro de un script puedes comprobar condiciones del tipo:
+
+> **si** *\<condición\>*{:.text-secondary} **entonces** *\<haz_esto\>*{:.text-secondary}
+
+Esto se escribe de la forma:
 
 ```bash
 if [ <condición> ]
 then
-    # Hacer algo
+    # Hacer esto
 fi
 ```
 
 Y también se puede acortar con:
 ```bash
 if [ <condición> ]; then
-    # Hacer algo
+    # Hacer esto
 fi
 ```
 
-Asegúrate de poner siempre espacios antes y después de la condición, o no funcionará como esperas.
+> Asegúrate de poner siempre espacios antes y después de la condición, o no funcionará como esperas.
+{:.text-tip}
 
 La condición para comparar dos cadenas de texto es con el doble igual `==`, por ejemplo:
 
@@ -290,21 +306,23 @@ fi
 
 Esta tabla resume algunas comprobaciones sobre ficheros:
 
-`-a` | ¿Existe el archivo? |
-`-d` | ¿Es un directorio?  |
-`-f` | ¿Es un fichero?     |
-`-r` | ¿Es un fichero de lectura?     |
-`-w` | ¿Se puede escribir el fichero? |
-`-x` | ¿Es un fichero ejecutable?     |
+`-e` | ¿Existe? (fichero, directorio, enlace...)  |
+`-d` | ¿Es un directorio?             |
+`-f` | ¿Es un fichero?                |
+`-r` | ¿Tiene permisos de lectura?    |
+`-w` | ¿Tiene permisos de escritura?  |
+`-x` | ¿Tiene permisos de ejecución?  |
 
-También puedes realizar comprobaciones del tipo *si <condición> entonces <haz_esto> si no <haz_esto_otro>* añadiendo `else`: 
+También puedes añadir la palabra `else` para realizar comprobaciones del tipo
+
+> **si** *\<condición\>*{:.text-secondary} **entonces** *\<haz_esto\>*{:.text-secondary} **si no** *\<haz_esto_otro\>*{:.text-secondary}
 
 ```bash
 if [ <condición> ]
 then
-    # Hacer algo
+    # Hacer esto
 else
-    # Hacer otra cosa
+    # Hacer esto otro
 fi
 ```
 
@@ -337,3 +355,12 @@ done
 
 Todas las líneas de código entre `do` y `done` se repiten varias veces, y lo único que cambia es el contenido de la variable que crea el bucle `for`.
 
+
+
+
+
+{% comment %}
+
+https://asir2.blogspot.com.es/p/scripts-bash-ejercicios.html
+
+{% endcomment %}
