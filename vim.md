@@ -1,6 +1,7 @@
 ---
 layout: article
 title: El editor vi
+hidden: true
 ---
 <style>
   img {
