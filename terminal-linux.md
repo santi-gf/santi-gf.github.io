@@ -224,10 +224,12 @@ $ rm *          # Borra todos los ficheros!
 
 El comando `echo` permite imprimir el texto indicado por pantalla, aunque se usa sobre todo para redirecciones.
 
-Se pueden introducir saltos de línea escribiendo `\n`.
+Se pueden introducir saltos de línea escribiendo `\n` si usas la opción `-e`.
 
 ```bash
-$ echo "Hola\nMundo"
+$ echo "Hola Mundo"
+Hola Mundo
+$ echo -e "Hola\nMundo"
 Hola
 Mundo
 ```
