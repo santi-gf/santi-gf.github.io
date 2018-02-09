@@ -28,7 +28,7 @@ Contiene información de las cuentas de usuarios y sus características.
 
 Se pueden ver los campos con `man passwd`:
 
-`name`      | Login del usuario |
+`name`      | Nombre del usuario |
 `password`  | El password del usuario en texto plano, o un asterisco (*) o una X si está encriptado. |
 `UID`       | *User ID*. Número de identificación único de usuario. Los usuarios pueden cambiar muchos prámetros, incluso su `name`, pero el UID no lo deben cambiar nunca. El UID del root es 0. Las cuentas de servicios y demonios tienen los números más bajos, mientras que las de usuarios finales comienzan en el valor definido en `UID_MIN` en el fichero `/etc/login.defs`. |
 `GID`       | *Gruop ID*. Número de identificador único de grupo. Varios usuarios pueden tener el mismo grupo, aunque al crear un usuario se crea un grupo con ese mismo nombre por defecto salvo que se indique lo contrario. Los datos del grupo aparecen en `/etc/group`. |
@@ -49,8 +49,13 @@ Por ejemplo:
 Contiene información sobre contraseñas de los usuarios en `/etc/passwd`, que almacena de manera cifrada.
 
 
-`login`
-`password`
+`login`     | Nombre del usuario |
+`password`  | Password encriptado. La función _hash_ usada para encriptar el password se indica al comienzo. Por ejemplo, `$1` se usa para el algoritmo MD5, y `$6` para el SHA-256. Además, puede contener un asterisco `*` o una exclamación `!`, o dos `!!` (ver tras la tabla). |
+
+
+Si se deshabilita un usuario (comando `usermod -L <user>`), se añade una exclamación (`!`) *al comienzo del campo password*, manteniéndose el hash tras la exclamación. El asterisco (`*`) se usa cuando el password nunca se ha establecido.
+
+
 
 
 

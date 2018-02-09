@@ -332,9 +332,9 @@ $ cat /etc/passwd | grep root
 $ grep cereza recetas.txt
 ```
 
-Con la opción `-i` se invierte la búsqueda, y devuelve las líneas que no contienen el término de búsqueda.
+Con la opción `-v` (o `--invert-match`) se invierte la búsqueda, y devuelve las líneas que no contienen el término de búsqueda.
 ```bash
-$ grep -i cereza recetas.txt
+$ grep -v cereza recetas.txt
 ```
 
 **Ejemplo:** El comando `ps aux` muestra procesos en ejecución. Con el siguiente comando podemos filtrar por el nombre de alguno de ellos y ver información (quizás para matar ese proceso).
