@@ -54,10 +54,6 @@ Contiene información sobre contraseñas de los usuarios en `/etc/passwd`, que a
 
 
 
-### `/etc/sudoers`
-
-
-
 
 
 {% comment %}
