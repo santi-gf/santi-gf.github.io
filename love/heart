@@ -1,0 +1,30 @@
+#!/usr/bin/env bash
+H='\033[0;31m' # Heart color
+A='\033[0;37m' # Arrow color
+
+echo -en	"${H}
+                     z#6*#°°°°*c     :@##****####L
+                  .@#F          °N..#F         '*##
+                 /#F             [#P             [##r
+                d#°                                ##      ${A}[%C°°°#${H}
+               4#F                                  #k    ${A}ud@# JP${H}
+               M#                                   ${A}J#*Cz*#& Md°${H}
+               MR                              ${A}.dCum##       °${H}
+               MR                               ${A})    ${H}#
+               4#                                   4#
+                #L                                  MF
+                [#                                 4#${H}
+                 ?B ${A}.z@r                           ${H}#${A}
+               .+(${H}2d${A}°° ?                          ${H}#~${A}
+    +#c  .z4Cn*°   ${H}°#.                           ${H}#${A}
+[#*M3#Eb*°°         ${H}[#c                         ${H}#${A}
+   /##RR              ${H}#b                      ${H}.R${A}
+   6*°                 ${H}^#L                   JF
+                         °#                 #
+                           °b             u°
+                             °N.        xF
+                               [*c    zF
+                                  °N@°
+"
+# Restablecer color blanco
+echo -e "\033[0;37m"
