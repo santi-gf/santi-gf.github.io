@@ -16,7 +16,7 @@ Este tutorial es la continuación del tutorial sobre [la terminal de Linux]({{ s
 {:toc}
 
 
-## Comienzo de un script
+# Comienzo de un script
 
 Un script de la shell es un fichero de texto plano compuesto por comandos de terminal que se ejecutan en conjunto automáticamente.
 
@@ -32,7 +32,7 @@ O también, más usado profesionalmente:
 #!/usr/bin/env bash
 ```
 
-Esta debe ser siempre la primera línea de todo scripts, sin poner saltos de línea ni espacios antes.
+Esta debe ser siempre la primera línea de todo scripts, sin poner saltos de línea ni espacios antes. Recuerda que esta línea debe aparecer **siempre** en todo script.
 
 
 
@@ -57,9 +57,15 @@ $ chmod u+x test1.sh  # Añade permiso de ejecución al usuario
 $ ./test.sh           # Ejecuta el script
 ```
 
+También lo podemos ejecutar con `sh` (script genérico) o con `bash` (scripts de bash):
+
+```bash
+$ sh test.sh
+$ bash test.sh
+```
+
 La extensión de fichero habitual para scripts es `.sh`, pero también es muy frecuente no poner extensión (en nuestro caso el fichero se llamaría simplemente `test`).
 
-Aunque obviemos esta línea en el resto del tutorial, recuerda que debe aparecer **siempre** en todo script.
 
 
 ## Comentarios
@@ -129,7 +135,7 @@ En un script podemos crear tantas variables como queramos con los nombres que el
 
 
 
-# Capturar la salida de un comando
+## Capturar la salida de un comando
 
 Como hemos dicho, en cada línea se ejecuta un comando que podríamos escribir en la terminal, y el resultado se muestra por pantalla. Pero en muchas ocasiones nos interesa capturar este resultado para trabajar con él desde el script, en vez de únicamente mostrarlo al usuario.
 
@@ -228,7 +234,7 @@ ls /home/$usuario
 ```
 
 
-## Condiciones `if`
+# Condiciones `if`
 
 Dentro de un script puedes comprobar condiciones del tipo:
 
@@ -322,6 +328,8 @@ fi
 ```
 
 
+{% comment %}
+
 ## Bucles `for`
 
 Prueba el siguiente código con un bucle `for`:
@@ -336,7 +344,7 @@ done
 
 Todas las líneas de código entre `do` y `done` se repiten varias veces, y lo único que cambia es el contenido de la variable que crea el bucle `for`.
 
-
+{% endcomment %}
 
 
 
