@@ -1,7 +1,7 @@
 ---
 layout: article
 title: Usuarios y Grupos en Linux
-date: 2018-01-20
+# date: 2018-01-20
 ---
 
 * Toc
