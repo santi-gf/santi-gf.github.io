@@ -271,6 +271,20 @@ fi
 
 También puedes comprobar que una cadena sea **diferente de** otra con `!=`.
 
+Para comprobar si una variable tiene contenido o si está vacía, se puede usar la opción `-z`:
+
+```bash
+var="" # Sin contenido
+if [ -z $var ]
+then
+    echo "La variable está vacía"
+fi
+```
+
+Puedes ver todas las opciones que se pueden usar con `man test`.
+
+## Comprobaciones sobre archivos y directorios
+
 También se pueden hacer comprobaciones sobre si ficheros o directorios existen:
 
 ```bash
