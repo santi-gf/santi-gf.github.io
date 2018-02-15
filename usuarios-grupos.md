@@ -113,7 +113,7 @@ No mail.
 No Plan.
 ```
 
-
+---
 
 ## Grupos
 
@@ -193,4 +193,80 @@ http://www.hostingadvice.com/how-to/linux-add-user-to-group/
 {% endcomment %}
 
 
+---
 
+
+## Permisos sobre archivos y directorios
+
+En Linux, cada fichero y directorio tiene permisos para:
+- **Usuario**: el sistema de ficheros guarda un usuario propietario (*UID*), junto a los permisos que tiene asociados.
+- **Grupo**: también se guarda un *GID* propietario, con permitos
+- **Otros**: también tiene permisos para usuarios que no tienen ese *UID* ni ese *GID*.
+
+
+El comando `ls -l` lista los archivos y directorios incluyendo información sobre sus permisos, de la siguiente manera:
+
+```bash
+$ ls -l
+drwxr-xr-x 6 usuario grupo  4096 Jan  5 17:37 directory
+-rw-r--r-- 1 usuario grupo  2048 Jul  6 12:56 file
+```
+
+El primer campo indica en la primera letra si es un archivo regular (`-`), directorio (`d`) o enlace (`l`). Tras ello, aparecen los permisos, organizados de **escritura**, **lectura** y **ejecución** para el *usuario*, *grupo* y *otros*.
+
+
+
+### Modificaciones de permisos
+
+Los permisos de un archivo o directorio se pueden modificar con el comando:
+
+```bash
+$ chmod permisos archivo(s)
+```
+
+**Modo relativo.** Se puede tratar uno de los campos de forma aislada sin tocar el resto de los permisos:
+
+- Se indica primero a quién se va a cambiar el permiso:
+    - `u`: usuario
+    - `g`: grupo
+    - `o`: otros
+    - `a`: `all` (también se puede dejar en blanco)
+- Tipo de operación:
+    - `+`: añadir permisos
+    - `-`: quitar permisos
+- Permisos:
+    - `r`: lectura
+    - `w`: excritura
+    - `x`: ejecución
+
+Ejemplos:
+```bash
+$ chmod u+x fichero
+```
+
+**Modo absoluto.** Se puede reemplazar la información completa de los permisos utilizando un número en base 8 (octal) de tres cifras. Los permisos coinciden con los del número en binario. Lo bueno de trabajar en octal es que cada caracter se puede trabajar de manera independiente.
+
+Ejemplo de permiso `754`:
+- `7` en binario es `111` ⇒ permisos de *usuario*: `rwx`
+- `5` en binario es `101` ⇒ permisos de *grupo*: `r-x`
+- `4` en binario es `100` ⇒ permisos de *otros*: `r--`
+
+```bash
+$ chmod 754 file
+$ ls -l file
+-rwxr-xr-- 1 usuario grupo  2048 Jan  6 13:03 file
+```
+
+
+### Cambio de propietario y de grupo
+
+Estos dos atributos se pueden modificar con los comandos:
+
+- `chown archivo nuevo_propietario`: modifica el propietario (*UID* asociado).
+- `chgrp archivo nuevo_grupo`: modifica el grupo (*GID* asociado).
+
+Con ambos se puede usar la opción `-R` en directorios, para que realice la operación de manera **recursiva**, es decir, que lo aplique a todo lo que contiene directamente o en subdirectorios, sub-subdirectorios etc.
+
+---
+
+<!-- ## Concesión de privilegios administrativos -->
