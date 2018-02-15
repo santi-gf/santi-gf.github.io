@@ -932,6 +932,25 @@ kbd {
 }
 
 
+.text-tip::before {
+    content:"➜";
+    float: left;
+    padding-right: 5px;
+}
+.text-tip {
+    color: #941818;
+}
+
+.language-bash .nv {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+
 // ==========================
 // = Bootstrap-like classes =
 // ==========================
@@ -940,3 +959,9 @@ kbd {
 .mx-auto {
   margin: auto;
 }
+
+.text-secondary {
+    color: rgb(108, 117, 125);
+}
+
+

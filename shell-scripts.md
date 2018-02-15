@@ -8,25 +8,6 @@ subtitle: Automatizando comandos de Linux
 h3 {
   margin-top: 2.5rem;
 }
-.language-bash .nv {
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -khtml-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-.text-secondary {
-    color: rgb(108, 117, 125);
-}
-.text-tip::before {
-    content:"➜";
-    float: left;
-    padding-right: 5px;
-}
-.text-tip {
-    color: #941818;
-} 
 </style>
 
 Este tutorial es la continuación del tutorial sobre [la terminal de Linux]({{ site.baseurl }}{% link terminal-linux.md %}).

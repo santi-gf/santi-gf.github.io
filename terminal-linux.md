@@ -8,22 +8,6 @@ subtitle: Introducción a la terminal
 h3 {
   margin-top: 2.5rem;
 }
-.language-bash .nv {
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -khtml-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-.text-tip::before {
-    content:"➜";
-    float: left;
-    padding-right: 5px;
-}
-.text-tip {
-    color: #941818;
-} 
 .code-small pre {
     font-size: 0.6rem;
 }
