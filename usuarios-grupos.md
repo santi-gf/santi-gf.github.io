@@ -214,7 +214,8 @@ drwxr-xr-x 6 usuario grupo  4096 Jan  5 17:37 directory
 
 El primer campo indica en la primera letra si es un archivo regular (`-`), directorio (`d`) o enlace (`l`). Tras ello, aparecen los permisos, organizados de **escritura**, **lectura** y **ejecución** para el *usuario*, *grupo* y *otros*.
 
-
+> El permiso de ejecución `x` en directorios significa que se puede acceder dentro del mismo y listar sus contenidos.
+{:.text-tip}
 
 ### Modificaciones de permisos
 
@@ -226,11 +227,11 @@ $ chmod permisos archivo(s)
 
 **Modo relativo.** Se puede tratar uno de los campos de forma aislada sin tocar el resto de los permisos:
 
-- Se indica primero a quién se va a cambiar el permiso:
+- Se indica primero a quién se va a cambiar el permiso (se pueden poner varios):
     - `u`: usuario
     - `g`: grupo
     - `o`: otros
-    - `a`: `all` (también se puede dejar en blanco)
+    - `a`: `all`, equivalente a `ugo` (también se puede dejar en blanco)
 - Tipo de operación:
     - `+`: añadir permisos
     - `-`: quitar permisos
@@ -242,6 +243,8 @@ $ chmod permisos archivo(s)
 Ejemplos:
 ```bash
 $ chmod u+x fichero
+$ chmod go-x fichero
+$ chmod +x fichero
 ```
 
 **Modo absoluto.** Se puede reemplazar la información completa de los permisos utilizando un número en base 8 (octal) de tres cifras. Los permisos coinciden con los del número en binario. Lo bueno de trabajar en octal es que cada caracter se puede trabajar de manera independiente.
@@ -255,6 +258,45 @@ Ejemplo de permiso `754`:
 $ chmod 754 file
 $ ls -l file
 -rwxr-xr-- 1 usuario grupo  2048 Jan  6 13:03 file
+```
+
+
+### Máscara `umask`
+
+La máscara del sistema operativo define los permisos que se asignan por defecto a archivos y directorios en el momento de su creación.
+
+El comando `umask` sin parámetros imprime el valor que tiene actualmente, y se puede manejar en modo simbólico y modo octal:
+```bash
+$ umask
+0022
+$ umask -S
+u=rwx,g=rx,o=rx
+```
+
+Si se pasa un parámetro al comando, se establece la nueva máscara.
+
+**Modo simbólico:** permite establecer los permisos usando las letras `u` (*user*), `g` (*group*), `o` (*other*) y `a` (*all*). Se puede hacer en modo relativo usando los símbolos `+` y `-`, o en modo absoluto con `=`, y combinaciones de ambos.
+
+```bash
+$ # Modo relativo
+$ umask g-w
+$ umask a+x
+$ # Modo relatuvo (u,o) y modo absoluto (g)
+$ umask u-w,g=r,o+r
+```
+
+**Modo octal:** permite establecer los permisos numéricamente, siempre en modo absoluto.
+
+El modo octal se usa en base a los permisos máximos, que para directorios es `777` y para archivos `666` (sin ejecución). Los bits de la máscara que estén a 1 desactivarán ese permiso a los permisos máximos. Ej: `umask = 023`
+```
+Umask      023: 000010011
+Directorio 777: 111111111 -> 111101100 = rwxr-xr--
+Archivo    666: 110110110 -> 110100100 = rw-r--r--
+```
+
+Muchos sistemas tienen la máscara `022`, que se establece con:
+```bash
+$ umask 022
 ```
 
 
