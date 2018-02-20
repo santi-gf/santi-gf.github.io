@@ -233,6 +233,39 @@ echo "Estos son los contenidos de tu carpeta de inicio:"
 ls /home/$usuario
 ```
 
+# Argumentos de entrada `$1`
+
+Desde el código de un script podemos obtener los argumentos o parámetros que nos pasan desde la consola al ejecutar el script. Estos argumentos los tenemos en las variables `$1`, `$2`, `$3`... Estas variables contendrán el valor que se pase, o estarán en blanco si no se han pasado argumentos.
+
+Por ejemplo, si tenemos el fichero `script.sh`:
+```bash
+#!/bin/bash
+echo "Primer argumento: $1"
+echo "Segundo argumento: $2"
+```
+
+Al ejecutarlo, tendremos:
+```bash
+$ bash script.sh
+Primer argumento: 
+Segundo argumento: 
+$ bash script.sh hola
+Primer argumento: hola
+Segundo argumento: 
+$ bash script.sh hola adios
+Primer argumento: hola
+Segundo argumento: adios
+```
+
+Es aconsejable pasar estos argumentos a nuevas variables con un nombre más descriptivo:
+```bash
+#!/bin/bash
+nombre=$1
+apellido=$2
+echo "Nombre: $nombre"
+echo "Apellido: $apellido"
+```
+
 
 # Condiciones `if`
 
