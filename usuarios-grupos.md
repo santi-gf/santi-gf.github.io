@@ -312,3 +312,46 @@ Con ambos se puede usar la opción `-R` en directorios, para que realice la oper
 ---
 
 <!-- ## Concesión de privilegios administrativos -->
+
+
+## Sudoers
+
+En Linux se pueden ejecutar determinados comandos como si fuesen el *root* con `sudo comando`. Si el usuario intenta ejecutar algo con `sudo`, se comprueba si tiene permisos para ejecutar el comando, y si no los tiene, no lo ejecuta y el intento queda registrado en el sistema.
+
+Se puede configurar los privilegios de los usuarios para ejecutar ciertos comandos con el fichero `/etc/sudoers`. Las modificaciones sobre este archivo no se deben realizar como si fuese un fichero normal, sino que hay que modificarlo con el comando `visudo`.
+
+Este archivo está dividido en varias secciones:
+
+**Definición de alias:** Existen varios tipos de alias para realizar agrupaciones. Algunos de ellos son:
+- `Cmd_Alias`: define alias de comandos. Por ejemplo:
+```
+Cmd_Alias CMD_RED = /sbin/ifup /sbin/ifdown
+```
+
+- `User_Alias`: agrupaciones de usuarios.
+```
+User_Alias ADMINS = user1, user2
+```
+
+- `Host_Alias`: alias de hosts, que pueden indicarse por su nombre, IP o IP son máscara de subred.
+```
+Host_Alias MIEMPRESA = 172.26.0.0/16
+```
+
+
+**Reglas de acceso:** En esta sección se asignan a los comandos que pueden realizar los usuarios y desde qué hosts lo puede hacer.
+
+Tiene el formato:
+```
+usuario host=(usuario_privilegiado) comandos
+```
+
+- **Usuario:** puede ser un usuario o alias de usuario. Indica a quién afecta la regla.
+- **Host:** indica desde qué host se permiten realizar esos comandos.
+- **Usuario_privilegiado:** indica qué permisos de usuarios privilegiados se permiten al usuario.
+- **Comandos:** indica los comandos o alias de comandos que se permiten para el usuario.
+
+Si se quiere permitir acceso completo a un usuario, se puede indicar con el alias especial `ALL`:
+```
+usuario ALL=(ALL) ALL
+```
