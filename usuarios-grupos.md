@@ -323,9 +323,9 @@ Se puede configurar los privilegios de los usuarios para ejecutar ciertos comand
 Este archivo está dividido en varias secciones:
 
 **Definición de alias:** Existen varios tipos de alias para realizar agrupaciones. Algunos de ellos son:
-- `Cmd_Alias`: define alias de comandos. Por ejemplo:
+- `Cmnd_Alias`: define alias de comandos. Por ejemplo:
 ```
-Cmd_Alias CMD_RED = /sbin/ifup /sbin/ifdown
+Cmnd_Alias CMND_RED = /sbin/ifup, /sbin/ifdown
 ```
 
 - `User_Alias`: agrupaciones de usuarios.
@@ -343,15 +343,23 @@ Host_Alias MIEMPRESA = 172.26.0.0/16
 
 Tiene el formato:
 ```
-usuario host=(usuario_privilegiado) comandos
+usuario host = (usuario_privilegiado) comandos
 ```
 
-- **Usuario:** puede ser un usuario o alias de usuario. Indica a quién afecta la regla.
+- **Usuario:** puede ser un usuario o alias de usuario. Indica a quién afecta la regla. Si comienza por `%`, entonces el nombre se refiere a un grupo del sistema.
 - **Host:** indica desde qué host se permiten realizar esos comandos.
-- **Usuario_privilegiado:** indica qué permisos de usuarios privilegiados se permiten al usuario.
+- **Usuario_privilegiado:** indica qué permisos de usuarios privilegiados se permiten al usuario. Este campo es opcional.
 - **Comandos:** indica los comandos o alias de comandos que se permiten para el usuario.
 
-Si se quiere permitir acceso completo a un usuario, se puede indicar con el alias especial `ALL`:
+Por ejemplo:
 ```
-usuario ALL=(ALL) ALL
+ADMINS MIEMPRESA = CMND_RED
 ```
+
+Si se quiere permitir acceso completo a un usuario, se puede indicar con el alias especial `ALL`. Por ejemplo, el usuario `root` se suele configurar como:
+```
+root ALL=(ALL) ALL
+```
+
+No es necesario reiniciar el sistema una vez modificado este fichero con `visudo`. Una vez configurado, un usuario podrá ejecutar esos comandos permitidos con `sudo` usando su propia contraseña.
+
