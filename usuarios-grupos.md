@@ -352,11 +352,12 @@ usuario host = (usuario_privilegiado) comandos
 - **Comandos:** indica los comandos o alias de comandos que se permiten para el usuario.
 
 Es necesario escribir los comandos usando su ruta completa. Para consultar la ruta de un comando puedes usar `which <nombre_comando>`. Los comandos más comunes se suelen localizar en:
-- `/bin`: comandos **esenciales** del sistema (`cat`, `ls`...) accesibles desde una etapa muy temprana en el arranque del sistema. Son accesibles por todos los usuarios.
-- `/sbin`: lo mismo, pero que requieren permisos de superusuario.
-- `/usr/bin`: comandos **no esenciales**, pero de uso general instalados a nivel de sistema para todos los usuarios.
-- `/usr/sbin`: equivalente al anterior, pero que requiere permisos de superusuario.
-- `/usr/local/bin`: comandos que no forman parte de la distribución del SO.
+
+`/bin` | comandos **esenciales** del sistema (`cat`, `ls`...) accesibles desde una etapa muy temprana en el arranque del sistema. Son accesibles por todos los usuarios.|
+`/sbin` | lo mismo, pero que requieren permisos de superusuario.|
+`/usr/bin` | comandos **no esenciales**, pero de uso general instalados a nivel de sistema para todos los usuarios.|
+`/usr/sbin` | equivalente al anterior, pero que requiere permisos de superusuario.|
+`/usr/local/bin` | comandos que no forman parte de la distribución del SO.|
 
 Por ejemplo:
 ```
