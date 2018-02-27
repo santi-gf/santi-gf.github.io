@@ -2,7 +2,6 @@
 layout: article
 title: Gestión de Recursos Linux
 subtitle: 
-hidden: true
 # date: 2018-02-10
 ---
 
