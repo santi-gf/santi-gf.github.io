@@ -375,12 +375,11 @@ fi
 ```
 
 
-{% comment %}
+
 
 ## Bucles `for`
 
 Prueba el siguiente código con un bucle `for`:
-
 ```bash
 #!/bin/bash
 for variable in 1 2 3 4 5
@@ -389,9 +388,24 @@ do
 done
 ```
 
-Todas las líneas de código entre `do` y `done` se repiten varias veces, y lo único que cambia es el contenido de la variable que crea el bucle `for`.
+Todas las líneas de código entre `do` y `done` se repiten varias veces, y lo único que cambia es el contenido de la variable que crea el bucle `for`. Este script imprimirá:
+```
+$ ./script.sh
+Imprimiento 1
+Imprimiento 2
+Imprimiento 3
+Imprimiento 4
+Imprimiento 5
+```
 
-{% endcomment %}
+Podemos usar este bucle para recorrer las líneas de un fichero de la siguiente manera:
+```bash
+#!/bin/bash
+for linea in `cat file.txt`
+do
+   echo "Línea: $linea"
+done
+```
 
 
 
