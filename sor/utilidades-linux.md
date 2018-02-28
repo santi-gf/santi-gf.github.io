@@ -46,3 +46,15 @@ curl wttr.in/Madrid?0  # Sólo el tiempo actual con ?0
 ```
 
 ![Madrid en wittr.in]({{ site.baseurl }}{% link /assets/wittr.in-Madrid.png %})
+
+
+## Hardware
+
+- `dmesg`
+- `fdisk -l`
+- `blkid`
+- `lsblk`
+- `mount`
+- `lsusb`
+- `usb-devices`
+- `df -h`
