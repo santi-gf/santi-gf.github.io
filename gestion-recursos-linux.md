@@ -40,5 +40,12 @@ El comando utilizado para montar unidades tiene la siguiente forma:
 mount <opciones> <dispositivo> <directorio_de_montaje>
 ```
 
-Para identificar el dispositivo,
-Para el directorio de montaje necesitaremos crearlo antes si no existe ya. Se puede hacer en cualquier directorio, aunque es común situar los medios extraíbles en `/media` o `/mnt`.
+- Para identificar el dispositivo es útil el comando `fdisk -l`, que lista los dispositivos conectados con información sobre ellos. De este modo podemos identificar qué fichero en `/dev` es el del dispositivo que queremos montar.
+- Para el directorio de montaje necesitaremos crearlo antes si no existe ya. Se puede hacer en cualquier directorio, aunque es común situar los medios extraíbles en `/media` o `/mnt`.
+- Las opciones conviene mirarlas con `man mount`. Una común es indicar el formato del sistema de ficheros.
+
+Por ejemplo:
+```
+mount -t vfat /dev/sdb1 /media/usb
+```
+
