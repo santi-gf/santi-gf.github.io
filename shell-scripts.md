@@ -377,7 +377,7 @@ fi
 
 
 
-## Bucles `for`
+# Bucles `for`
 
 Prueba el siguiente código con un bucle `for`:
 ```bash
