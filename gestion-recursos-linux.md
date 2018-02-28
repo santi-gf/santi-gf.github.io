@@ -27,3 +27,18 @@ Existen además algunos ficheros especiales que no pertenecen a dispositivos ext
 
 `/dev/null` | Acepta cualquier entrada y la descarta. Se usa en ocasiones para redirigir la salida aquí y que no se muestre por pantalla. Al ser leído, no devuelve nada (sólo el carácter de *fin-de-fichero*). |
 `/dev/random` | Al ser leído, genera un stream ilimitado de números aleatorio. Devuelve números en binario, no en ASCII, por lo que no se muestran con `cat`, pero es la base de usa *Bash* cuando escribimos `echo $RANDOM`. |
+
+
+## Montaje de unidades
+
+La forma de trabajo con dispositivos de almacenamiento en Windows y Linux tiene sustanciales diferencias. Mientras que Windows asigna una unidad diferente a cada dispositivo (`C`, `D`...), Linux trabaja con un único árbol de directorios de modo que cuando montamos un dispositivo le indicamos que sus archivos serán colgados a partir de un directorio concreto a partir del cual serán accesibles.
+
+Un **montaje** es la asociación del fichero especial de un dispositivo junto con la ruta del árbol de directorios en la cual se va a acceder a la información.
+
+El comando utilizado para montar unidades tiene la siguiente forma:
+```
+mount <opciones> <dispositivo> <directorio_de_montaje>
+```
+
+Para identificar el dispositivo,
+Para el directorio de montaje necesitaremos crearlo antes si no existe ya. Se puede hacer en cualquier directorio, aunque es común situar los medios extraíbles en `/media` o `/mnt`.
