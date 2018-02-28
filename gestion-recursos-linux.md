@@ -49,3 +49,7 @@ Por ejemplo:
 mount -t vfat /dev/sdb1 /media/usb
 ```
 
+Para desmontarlo se usa `umount` con el directorio montado:
+```
+umount /media/sdb1
+```
