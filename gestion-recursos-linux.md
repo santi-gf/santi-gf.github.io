@@ -16,13 +16,14 @@ Al conectar físicamente un dispositivo al ordenador, aparece para él un **fich
 
 Los ficheros en este directorio se organizan según el uso que tienen. Algunos de ellos son:
 
-|---|---|
-| `/dev/sd<x><y>` | Discos duros SCSI o SATA. `<x>` es una letra de identificación del disco, e `<y>` identifica la partición.|
-| `/dev/hd<x><y>` | Discos duros IDE.|
-| `/dev/cdrom<x>` | Unidades ópticas.|
-| `/dev/usb<x>`   | Unidades USB.|
-| `/dev/lp`       | Impresoras (line-printer).|
-| `/dev/tty`      | Terminales usadas en el sistema.|
+| &nbsp; | &nbsp;
+|---|---
+| `/dev/sd<x><y>` | Discos duros SCSI o SATA. `<x>` es una letra de identificación del disco, e `<y>` identifica la partición.
+| `/dev/hd<x><y>` | Discos duros IDE.
+| `/dev/cdrom<x>` | Unidades ópticas.
+| `/dev/usb<x>`   | Unidades USB.
+| `/dev/lp`       | Impresoras (line-printer).
+| `/dev/tty`      | Terminales usadas en el sistema.
 
 Existen además algunos ficheros especiales que no pertenecen a dispositivos externos, y se usan únicamente por software. Por ejemplo:
 
