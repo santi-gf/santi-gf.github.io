@@ -16,7 +16,6 @@ Al conectar físicamente un dispositivo al ordenador, aparece para él un **fich
 
 Los ficheros en este directorio se organizan según el uso que tienen. Algunos de ellos son:
 
-| A | B |
 |---|---|
 | `/dev/sd<x><y>` | Discos duros SCSI o SATA. `<x>` es una letra de identificación del disco, e `<y>` identifica la partición.|
 | `/dev/hd<x><y>` | Discos duros IDE.|
