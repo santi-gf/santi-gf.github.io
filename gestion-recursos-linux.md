@@ -55,3 +55,26 @@ Para desmontarlo se usa `umount` con el directorio montado:
 ```
 umount /media/sdb1
 ```
+
+### Ver unidades montadas
+
+Los sistemas de montaje como `mount` actualizan el fichero `/etc/mtab` con información sobre las unidades que montan. Se pueden mostrar en cualquier momento:
+```
+$ sudo cat /etc/mtab
+/dev/xvda1 / ext4 rw,discard 0 0
+proc /proc proc rw 0 0
+...
+```
+
+Sin embargo, también existe un fichero virtual llamado `/proc/mounts` que se lee como cualquier otro, pero cuyos contenidos se generan en el momento por el Kernel cada vez que es leído con información sobre el estado de los dispositivos montados. En caso de duda, éste es el fichero que tiene la información más actualizada y fiable.
+```
+$ sudo cat /proc/mounts
+/dev/sda2 / ext4 rw 0 0
+proc /proc proc rw,realtime 0 0
+...
+```
+
+
+## Fichero `/etc/fstab`
+
+Este fichero contiene la configuración de las particiones que han de ser montadas automáticamente durante el proceso de arranque. Esto evita montarlas manualmente
