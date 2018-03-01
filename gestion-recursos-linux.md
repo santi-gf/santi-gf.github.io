@@ -44,7 +44,7 @@ mount <opciones> <dispositivo> <directorio_de_montaje>
 
 - Para identificar el dispositivo es útil el comando `fdisk -l`, que lista los dispositivos conectados con información sobre ellos. De este modo podemos identificar qué fichero en `/dev` es el del dispositivo que queremos montar.
 - Para el directorio de montaje necesitaremos crearlo antes si no existe ya. Se puede hacer en cualquier directorio, aunque es común situar los medios extraíbles en `/media` o `/mnt`.
-- Las opciones conviene mirarlas con `man mount`. Una común es indicar el formato del sistema de ficheros.
+- Las opciones conviene mirarlas con `man mount`. Una común es indicar el formato del sistema de ficheros (`-t vfat`, `-t ext3`, `-t ntfs-3g`...)
 
 Por ejemplo:
 ```
@@ -75,6 +75,16 @@ proc /proc proc rw,realtime 0 0
 ```
 
 
-## Fichero `/etc/fstab`
+### Fichero `/etc/fstab`
 
-Este fichero contiene la configuración de las particiones que han de ser montadas automáticamente durante el proceso de arranque. Esto evita montarlas manualmente
+Este fichero contiene la configuración de las particiones que han de ser montadas automáticamente durante el proceso de arranque. De este modo podemos evitar montarlas manualmente. Además, podemos indicarle algunos parámetros para que la unidad sea sólo de lectura o de lectura y escritura, y si permitimos o no al usuario montarla y desmontarla posteriormente.
+
+Este fichero se edita con privilegios con cualquier editor de texto plano. Tiene contenidos del estilo:
+```
+$ sudo cat /etc/fstab
+/dev/sdb /mount/usb vfat rw,user,noauto 0 0
+/dev/hda7 /mnt/compartidos vfat umask=000 0 0
+/dev/hda1 /mnt/WinXP ntfs-3g quiet,defaults,locale=en_US.utf8,umask=0 0 0
+...
+```
+
