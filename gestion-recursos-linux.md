@@ -44,7 +44,7 @@ mount <opciones> <dispositivo> <directorio_de_montaje>
 
 - Para identificar el dispositivo es útil el comando `fdisk -l`, que lista los dispositivos conectados con información sobre ellos. De este modo podemos identificar qué fichero en `/dev` es el del dispositivo que queremos montar.
 - Para el directorio de montaje necesitaremos crearlo antes si no existe ya. Se puede hacer en cualquier directorio, aunque es común situar los medios extraíbles en `/media` o `/mnt`.
-- Las opciones conviene mirarlas con `man mount`. Una común es indicar el formato del sistema de ficheros (`-t vfat`, `-t ext3`, `-t ntfs-3g`...)
+- Las opciones conviene mirarlas con `man mount`. Una común es indicar el formato del sistema de ficheros (`-t vfat`, `-t ext3`, `-t ntfs-3g`, `-t nfs`...)
 
 Por ejemplo:
 ```
@@ -88,3 +88,48 @@ $ sudo cat /etc/fstab
 ...
 ```
 
+
+## Archivos compartidos (NFS)
+
+NFS (*Network File System*) es un servicio que permite la compartición de archivos con sistemas de tiepo UNIX.
+
+La relación entre los equipos NFS funciona del siguiente modo:
+- El servidor NFS debe **exportar** los directorios que va a compartir.
+- Los clientes deben **montar** los directorios compartidos en algún punto del sistema de ficheros. Cada cliente puede tener acceso simultáneo a varios directorios compartidos de un mismo o varios servidores.
+
+
+### Servidor NFS
+
+El servidor debe indicar los directorios a exportar en el fichero `/etc/exports`. Se usa una sintaxis como la siguiente:
+```
+<directorio> <IP>(<permisos>) <IP>(<permisos>)...
+```
+- `<directorio>` es el directorio que se desea compartir
+- `<IP>` es una **IP o rango de IPs* a las cuales se permite el acceso.
+- `<permisos>` pueden ser de sólo lectura (`ro`, *read-only*) o lectura y escritura (`rw`, *read-write*)
+
+Ejemplos en `/etc/exports`. El uso del asterisco `*` permite exportar un directorio a un rango de IPs:
+```
+/home/smr/enunciados 192.168.1.5(ro)
+/home/smr/entregas 192.168.1.*(rw)
+```
+
+Tras cambiar este fichero, hay que reiniciar el servicio NFS:
+```bash
+$ sudo service nfs restart
+```
+
+
+### Cliente NFS
+
+El montaje de directorios compartidos se puede realizar de dos formas principalmente, relacionadas con lo visdo en los apartados anteriores:
+
+1. Mediante el comanto `mount` se puede montar el directorio compartido como si de un dispositivo de almacenamiento se tratase. El siguiente ejemplo monta el directorio del ejemplo anterior en el directorio local `/home/entregas-servidor`.
+```bash
+$ sudo mount 192.161.1.2:/home/smr/entregas /home/entregas-servidor
+```
+
+2. Mediante el fichero `/etc/fstab` se puede configurar que el montaje se realice automáticamente durante el arranque del sistema. Por ejemplo, se puede añadir en este fichero una línea como la siguiente:
+```
+192.161.1.2:/home/smr/entregas /home/entregas-servidor nfs defaults 0 0
+```
