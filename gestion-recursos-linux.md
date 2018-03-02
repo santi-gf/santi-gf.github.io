@@ -102,11 +102,11 @@ La relación entre los equipos NFS funciona del siguiente modo:
 
 El servidor debe indicar los directorios a exportar en el fichero `/etc/exports`. Se usa una sintaxis como la siguiente:
 ```
-<directorio> <IP>(<permisos>) <IP>(<permisos>)...
+<directorio> <host>(<permisos>) <host>(<permisos>)...
 ```
-- `<directorio>` es el directorio que se desea compartir
-- `<IP>` es una **IP o rango de IPs* a las cuales se permite el acceso.
-- `<permisos>` pueden ser de sólo lectura (`ro`, *read-only*) o lectura y escritura (`rw`, *read-write*)
+- `<directorio>` es el directorio que se desea compartir.
+- `<host>` es una IP o nombre DNS del host al que se le permite acceso. Se pueden indicar un conjunto de IPs usando el asterisco (ver ejemplo).
+- `<permisos>` pueden ser de sólo lectura (`ro`, *read-only*) o lectura y escritura (`rw`, *read-write*).
 
 Ejemplos en `/etc/exports`. El uso del asterisco `*` permite exportar un directorio a un rango de IPs:
 ```
