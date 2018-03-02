@@ -29,8 +29,8 @@ Existen además algunos ficheros especiales que no pertenecen a dispositivos ext
 
 | Fichero | Descripción
 |---|---
-`/dev/null` | Acepta cualquier entrada y la descarta. Se usa en ocasiones para redirigir la salida aquí y que no se muestre por pantalla. Al ser leído, no devuelve nada (sólo el carácter de *fin-de-fichero*). |
-`/dev/random` | Al ser leído, genera un stream ilimitado de números aleatorio. Devuelve números en binario, no en ASCII, por lo que no se muestran con `cat`, pero es la base de usa *Bash* cuando escribimos `echo $RANDOM`. |
+`/dev/null` | Acepta cualquier entrada y la descarta. Se usa en ocasiones para redirigir la salida de un comando a este fichero y que no se muestre por pantalla. |
+`/dev/random` | Al ser leído, genera un *stream* ilimitado de números aleatorio. Devuelve números en binario, no en ASCII, por lo que no se muestran con `cat`, pero es la base de usa *Bash* cuando escribimos `echo $RANDOM`. |
 
 
 ## Montaje de unidades
