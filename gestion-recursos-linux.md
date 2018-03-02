@@ -27,6 +27,8 @@ Los ficheros en este directorio se organizan según el uso que tienen. Algunos d
 
 Existen además algunos ficheros especiales que no pertenecen a dispositivos externos, y se usan únicamente por software. Por ejemplo:
 
+| Fichero | Descripción
+|---|---
 `/dev/null` | Acepta cualquier entrada y la descarta. Se usa en ocasiones para redirigir la salida aquí y que no se muestre por pantalla. Al ser leído, no devuelve nada (sólo el carácter de *fin-de-fichero*). |
 `/dev/random` | Al ser leído, genera un stream ilimitado de números aleatorio. Devuelve números en binario, no en ASCII, por lo que no se muestran con `cat`, pero es la base de usa *Bash* cuando escribimos `echo $RANDOM`. |
 
